@@ -1,0 +1,3 @@
+C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/Class1/CMakeFiles/class1_exe.dir
+C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/Class1/CMakeFiles/edit_cache.dir
+C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/Class1/CMakeFiles/rebuild_cache.dir

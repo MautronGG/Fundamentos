@@ -1,0 +1,135 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Class1\\Class1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1-1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Class1\\Class1-1.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Class1\\Class1.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F3850745-F250-E623-E71F-6FB6F0B57AF8}|..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\VisualStudio\\17.0_efdaf892\\SingleFileISense\\_sfi_639d7929-d31a-402a-bee3-938e47ab63b7_.vcxproj|C:\\USERS\\MAUIG\\DOWNLOADS\\FUNDAMENTOS\\FUNDAMENTOS\\HELLO.H||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\hello.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 170,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "hello.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\hello.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\Fundamentos\\Fundamentos\\hello.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\hello.cpp",
+              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\Fundamentos\\Fundamentos\\hello.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-27T22:26:21.979Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "hello.h",
+              "DocumentMoniker": "C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\hello.h",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\Fundamentos\\Fundamentos\\hello.h",
+              "ToolTip": "C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\hello.h",
+              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\Fundamentos\\Fundamentos\\hello.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-27T22:26:15.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "main.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\main.cpp",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Downloads\\Fundamentos\\Fundamentos\\main.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Downloads\\Fundamentos\\Fundamentos\\main.cpp",
+              "RelativeToolTip": "..\\..\\..\\..\\Downloads\\Fundamentos\\Fundamentos\\main.cpp",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEcAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-25T00:32:09.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "CMakeLists.txt",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\CMakeLists.txt",
+              "RelativeToolTip": "CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-02-24T23:16:16.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Class1-1.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1-1.cpp",
+              "RelativeDocumentMoniker": "Class1\\Class1-1.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1-1.cpp",
+              "RelativeToolTip": "Class1\\Class1-1.cpp",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-24T23:14:28.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Class1.h",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1.h",
+              "RelativeDocumentMoniker": "Class1\\Class1.h",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1.h",
+              "RelativeToolTip": "Class1\\Class1.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-02-24T23:14:28.866Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Class1.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1.cpp",
+              "RelativeDocumentMoniker": "Class1\\Class1.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class1\\Class1.cpp",
+              "RelativeToolTip": "Class1\\Class1.cpp",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-02-24T23:14:27.969Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
