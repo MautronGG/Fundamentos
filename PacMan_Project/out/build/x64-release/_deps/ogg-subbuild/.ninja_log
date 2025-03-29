@@ -1,0 +1,37 @@
+# ninja log v6
+3	70	7643601952874696	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-mkdir	27b089266303b4dd
+3	70	7643601952874696	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-mkdir	27b089266303b4dd
+71	2101	7643601973169807	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-download	897dea024db6e262
+71	2101	7643601973169807	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-download	897dea024db6e262
+37	242	7644767597289729	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-update	2ba631c27d16a8da
+37	242	7644767597289729	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-update	2ba631c27d16a8da
+242	325	7644767600088456	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-patch	252ec7d709b7db8d
+242	325	7644767600088456	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-patch	252ec7d709b7db8d
+326	410	7644767600962800	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-configure	b20f3f5d7e746abe
+326	410	7644767600962800	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-configure	b20f3f5d7e746abe
+411	478	7644767601637128	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-build	698192e46122b1d
+411	478	7644767601637128	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-build	698192e46122b1d
+554	638	7644767603215489	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-test	dc28aa3433e51b34
+478	553	7644767602350082	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-install	a1c894f898d747c3
+478	553	7644767602350082	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-install	a1c894f898d747c3
+554	638	7644767603215489	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-test	dc28aa3433e51b34
+639	755	7644767604380203	CMakeFiles/ogg-populate-complete	38128b2a2e5a6ce7
+639	755	7644767604380203	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-done	38128b2a2e5a6ce7
+639	755	7644767604380203	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/CMakeFiles/ogg-populate-complete	38128b2a2e5a6ce7
+639	755	7644767604380203	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-done	38128b2a2e5a6ce7
+44	220	7644776496448899	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-update	2ba631c27d16a8da
+44	220	7644776496448899	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-update	2ba631c27d16a8da
+220	296	7644776498881463	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-patch	252ec7d709b7db8d
+220	296	7644776498881463	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-patch	252ec7d709b7db8d
+296	359	7644776499530986	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-configure	b20f3f5d7e746abe
+296	359	7644776499530986	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-configure	b20f3f5d7e746abe
+359	424	7644776500177788	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-build	698192e46122b1d
+359	424	7644776500177788	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-build	698192e46122b1d
+425	508	7644776500982947	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-install	a1c894f898d747c3
+425	508	7644776500982947	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-install	a1c894f898d747c3
+509	600	7644776501911458	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-test	dc28aa3433e51b34
+509	600	7644776501911458	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-test	dc28aa3433e51b34
+601	718	7644776503107840	CMakeFiles/ogg-populate-complete	38128b2a2e5a6ce7
+601	718	7644776503107840	ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-done	38128b2a2e5a6ce7
+601	718	7644776503107840	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/CMakeFiles/ogg-populate-complete	38128b2a2e5a6ce7
+601	718	7644776503107840	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-release/_deps/ogg-subbuild/ogg-populate-prefix/src/ogg-populate-stamp/ogg-populate-done	38128b2a2e5a6ce7

@@ -1,0 +1,200 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\StaticLibrary\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StaticLibrary\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibrary\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DynamicLibrary\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibraryRuntime\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DynamicLibraryRuntime\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibraryRuntime\\dll_runtime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DynamicLibraryRuntime\\dll_runtime.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Executable\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\Class4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Executable\\Class4.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\StaticLibrary\\static_library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StaticLibrary\\static_library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\Class4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Executable\\Class4.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibrary\\dynamic_library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:DynamicLibrary\\dynamic_library.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|CMake Overview Pages||{B1CAA5B0-FEB1-4350-8AB9-F895876842F2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Class4.h",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\Class4.h",
+              "RelativeDocumentMoniker": "Executable\\Class4.h",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\Class4.h",
+              "RelativeToolTip": "Executable\\Class4.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-21T22:59:49.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "dll_runtime.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibraryRuntime\\dll_runtime.cpp",
+              "RelativeDocumentMoniker": "DynamicLibraryRuntime\\dll_runtime.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibraryRuntime\\dll_runtime.cpp",
+              "RelativeToolTip": "DynamicLibraryRuntime\\dll_runtime.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-15T17:03:15.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibraryRuntime\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "DynamicLibraryRuntime\\CMakeLists.txt",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibraryRuntime\\CMakeLists.txt",
+              "RelativeToolTip": "DynamicLibraryRuntime\\CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-03-15T17:03:15.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "Executable\\CMakeLists.txt",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\CMakeLists.txt",
+              "RelativeToolTip": "Executable\\CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-03-15T15:46:04.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibrary\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "DynamicLibrary\\CMakeLists.txt",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibrary\\CMakeLists.txt",
+              "RelativeToolTip": "DynamicLibrary\\CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-03-15T16:15:53.535Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "dynamic_library.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibrary\\dynamic_library.cpp",
+              "RelativeDocumentMoniker": "DynamicLibrary\\dynamic_library.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\DynamicLibrary\\dynamic_library.cpp",
+              "RelativeToolTip": "DynamicLibrary\\dynamic_library.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-15T16:14:37.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "static_library.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\StaticLibrary\\static_library.cpp",
+              "RelativeDocumentMoniker": "StaticLibrary\\static_library.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\StaticLibrary\\static_library.cpp",
+              "RelativeToolTip": "StaticLibrary\\static_library.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-15T15:52:48.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Class4.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\Class4.cpp",
+              "RelativeDocumentMoniker": "Executable\\Class4.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\Executable\\Class4.cpp",
+              "RelativeToolTip": "Executable\\Class4.cpp",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-15T15:52:41.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\StaticLibrary\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "StaticLibrary\\CMakeLists.txt",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\StaticLibrary\\CMakeLists.txt",
+              "RelativeToolTip": "StaticLibrary\\CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-03-15T15:47:11.649Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CMakeLists.txt",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\CMakeLists.txt",
+              "RelativeDocumentMoniker": "CMakeLists.txt",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\Class4\\CMakeLists.txt",
+              "RelativeToolTip": "CMakeLists.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2025-03-15T15:45:53.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CMake Overview Pages",
+              "DocumentMoniker": "CMake Overview Pages",
+              "ToolTip": "CMake Overview Pages",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-03-15T15:44:34.503Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

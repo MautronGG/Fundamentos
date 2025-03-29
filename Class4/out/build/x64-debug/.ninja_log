@@ -1,0 +1,12 @@
+# ninja log v6
+73	395	7637651540318473	StaticLibrary/CMakeFiles/StaticLibrary.dir/static_library.cpp.obj	b74b25949de500a
+79	388	7637651540371366	DynamicLibrary/CMakeFiles/DynamicLibrary.dir/dynamic_library.cpp.obj	8e7e01f75c6a11d0
+395	435	7637651543542141	lib/StaticLibrary.lib	98ad48e0afc81e67
+389	532	7637651544509147	lib/DynamicLibrary.dll	2417d5171924dc22
+5	19	7637651497318962	clean	8c45b54705a541e8
+389	532	7637651544509147	lib/DynamicLibrary.lib	2417d5171924dc22
+89	873	7637651540481584	Executable/CMakeFiles/Class4.dir/Class4.cpp.obj	b54584f55815bf2e
+874	1056	7637651548331564	lib/Class4.exe	a741d525bf61f6d4
+25	322	7637651516063737	DynamicLibraryRuntime/CMakeFiles/DynamicLibraryRuntime.dir/dll_runtime.cpp.obj	222fd0a6a7d33a47
+323	493	7637651520230563	lib/DynamicLibraryRuntime.dll	7fe71bd6064370b9
+323	493	7637651520230563	lib/DynamicLibraryRuntime.lib	7fe71bd6064370b9

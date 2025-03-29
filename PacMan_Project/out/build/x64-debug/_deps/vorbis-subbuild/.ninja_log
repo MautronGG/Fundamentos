@@ -1,0 +1,37 @@
+# ninja log v6
+375	435	7646395842131888	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-install	e061fe24f974de17
+6	104	7644794509925125	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-mkdir	d5187f7eebeab00
+6	104	7644794509925125	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-mkdir	d5187f7eebeab00
+105	4352	7644794552406743	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-download	632ef225cde3142e
+105	4352	7644794552406743	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-download	632ef225cde3142e
+218	315	7646395840896668	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-configure	cb09a2a257db45f1
+161	218	7646395839964865	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-patch	8c6f39cb8106f6b7
+30	161	7646395838140888	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-update	d4ef78af26d9e6e
+30	161	7646395838140888	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-update	d4ef78af26d9e6e
+161	218	7646395839964865	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-patch	8c6f39cb8106f6b7
+218	315	7646395840896668	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-configure	cb09a2a257db45f1
+315	374	7646395841526208	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-build	424a4c4ba20bf963
+315	374	7646395841526208	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-build	424a4c4ba20bf963
+375	435	7646395842131888	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-install	e061fe24f974de17
+435	488	7646395842661746	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-test	405b02fd3224d543
+435	488	7646395842661746	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-test	405b02fd3224d543
+488	561	7646395843396599	CMakeFiles/vorbis-populate-complete	73e9447003a1fb49
+488	561	7646395843396599	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-done	73e9447003a1fb49
+488	561	7646395843396599	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate-complete	73e9447003a1fb49
+488	561	7646395843396599	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-done	73e9447003a1fb49
+23	193	7646397948785270	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-update	d4ef78af26d9e6e
+23	193	7646397948785270	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-update	d4ef78af26d9e6e
+193	265	7646397951124356	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-patch	8c6f39cb8106f6b7
+193	265	7646397951124356	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-patch	8c6f39cb8106f6b7
+265	325	7646397951724453	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-configure	cb09a2a257db45f1
+265	325	7646397951724453	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-configure	cb09a2a257db45f1
+325	382	7646397952306618	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-build	424a4c4ba20bf963
+325	382	7646397952306618	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-build	424a4c4ba20bf963
+383	468	7646397953122191	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-install	e061fe24f974de17
+383	468	7646397953122191	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-install	e061fe24f974de17
+469	530	7646397953777396	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-test	405b02fd3224d543
+469	530	7646397953777396	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-test	405b02fd3224d543
+530	608	7646397954565766	CMakeFiles/vorbis-populate-complete	73e9447003a1fb49
+530	608	7646397954565766	vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-done	73e9447003a1fb49
+530	608	7646397954565766	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/CMakeFiles/vorbis-populate-complete	73e9447003a1fb49
+530	608	7646397954565766	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/vorbis-subbuild/vorbis-populate-prefix/src/vorbis-populate-stamp/vorbis-populate-done	73e9447003a1fb49

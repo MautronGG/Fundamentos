@@ -1,0 +1,151 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Executable",
+					"jsonFile" : "directory-Executable-Debug-0d808f97af5cf0c31a3c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Executable",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "StaticLibrary",
+					"jsonFile" : "directory-StaticLibrary-Debug-c784453196e2b50e5f66.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "StaticLibrary",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "DynamicLibrary",
+					"jsonFile" : "directory-DynamicLibrary-Debug-fdc3c0c7da15259bfb9c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DynamicLibrary",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "DynamicLibraryRuntime",
+					"jsonFile" : "directory-DynamicLibraryRuntime-Debug-c11e8e6bc929d6cdc241.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "DynamicLibraryRuntime",
+					"targetIndexes" : 
+					[
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4
+					],
+					"name" : "Class4",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Class4::@a203b219dd3218d60f25",
+					"jsonFile" : "target-Class4-Debug-41a694182409a55816e8.json",
+					"name" : "Class4",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "DynamicLibrary::@1a27524c5f02552da736",
+					"jsonFile" : "target-DynamicLibrary-Debug-fcad5542a6ecfcd58ef8.json",
+					"name" : "DynamicLibrary",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "DynamicLibraryRuntime::@a7c02f91c36769309677",
+					"jsonFile" : "target-DynamicLibraryRuntime-Debug-aa48480eeb6464d566d5.json",
+					"name" : "DynamicLibraryRuntime",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "StaticLibrary::@84a2d944069d29d4e028",
+					"jsonFile" : "target-StaticLibrary-Debug-0dee722bb6285a0a62cb.json",
+					"name" : "StaticLibrary",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/Class4/out/build/x64-debug",
+		"source" : "C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/Class4"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 8
+	}
+}

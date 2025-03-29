@@ -1,0 +1,37 @@
+# ninja log v6
+508	593	7646395799744318	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-done	27c59cd41ba12894
+6	94	7644793846064772	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir	dd53198762c86832
+22	218	7646395794105209	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	b84984f1a6efc494
+6	94	7644793846064772	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-mkdir	dd53198762c86832
+95	12484	7644793969944026	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	9cacd533cad48b34
+22	218	7646395794105209	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	b84984f1a6efc494
+95	12484	7644793969944026	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-download	9cacd533cad48b34
+219	284	7646395796653134	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	e081fbcb416429ac
+219	284	7646395796653134	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	e081fbcb416429ac
+284	341	7646395797238525	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	41a8cf19f4e9db2b
+284	341	7646395797238525	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	41a8cf19f4e9db2b
+341	400	7646395797818646	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	12796468b1065c9a
+341	400	7646395797818646	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	12796468b1065c9a
+400	456	7646395798389907	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	7ef8b469a0ef8598
+400	456	7646395798389907	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	7ef8b469a0ef8598
+456	508	7646395798910870	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	c82986ffdb08a789
+456	508	7646395798910870	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	c82986ffdb08a789
+508	593	7646395799744318	CMakeFiles/sfml-populate-complete	27c59cd41ba12894
+508	593	7646395799744318	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-done	27c59cd41ba12894
+508	593	7646395799744318	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete	27c59cd41ba12894
+28	177	7646397905822577	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	b84984f1a6efc494
+28	177	7646397905822577	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-update	b84984f1a6efc494
+178	233	7646397907821148	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	e081fbcb416429ac
+178	233	7646397907821148	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-patch	e081fbcb416429ac
+233	295	7646397908440827	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	41a8cf19f4e9db2b
+233	295	7646397908440827	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-configure	41a8cf19f4e9db2b
+296	364	7646397909118453	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	12796468b1065c9a
+296	364	7646397909118453	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-build	12796468b1065c9a
+364	416	7646397909652657	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	7ef8b469a0ef8598
+364	416	7646397909652657	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-install	7ef8b469a0ef8598
+416	470	7646397910188571	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	c82986ffdb08a789
+416	470	7646397910188571	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-test	c82986ffdb08a789
+470	546	7646397910947239	CMakeFiles/sfml-populate-complete	27c59cd41ba12894
+470	546	7646397910947239	sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-done	27c59cd41ba12894
+470	546	7646397910947239	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/CMakeFiles/sfml-populate-complete	27c59cd41ba12894
+470	546	7646397910947239	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/sfml-subbuild/sfml-populate-prefix/src/sfml-populate-stamp/sfml-populate-done	27c59cd41ba12894
