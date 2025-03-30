@@ -3,13 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Entity.h"
 #include "TransformComponent.h"
-struct Vector3
-{
-  int type = 0;
-  int index = 0;
-  float x = 0.0f;
-  float y = 0.0f;
-};
+struct Vector3;
 
 class Tile : public Entity
 {

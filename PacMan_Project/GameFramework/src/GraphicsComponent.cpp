@@ -15,6 +15,9 @@ void GraphicsComponent::Update(const Entity* parent/*DeltaTime*/)
     {
       sf::Vector2f newPosition(transform->position.x, transform->position.y);
       m_sprite.setPosition(newPosition);
+
+      //float newRotation(transform->rotation);
+      //m_sprite.setRotation(sf::degrees(newRotation));
     }
   }
 }

@@ -4,6 +4,13 @@
 #include <memory>
 
 class Component;
+struct Vector3
+{
+  int type = 0;
+  int index = 0;
+  float x = 0.0f;
+  float y = 0.0f;
+};
 
 class Entity
 {
@@ -19,8 +26,13 @@ public:
 
   void Update(/*DeltaTime*/);
   
+
 private:
   std::vector<std::shared_ptr<Component>> m_components;
+public:
+  Vector3 m_nextTile;
+  Vector3 m_tryNextTile;
+
 };
 
 template <typename T, typename... Args>

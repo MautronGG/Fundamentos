@@ -7,8 +7,24 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:PacMan\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\GraphicsComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\GraphicsComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Ghost.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\Ghost.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\TransformComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\TransformComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Ghost.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\Ghost.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Map.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -17,6 +33,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\Tile.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\GraphicsComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\GraphicsComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\GraphicsComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\GraphicsComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\TransformComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\TransformComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Tile.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -31,30 +63,6 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\Scene.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\TransformComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\TransformComponent.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\Entity.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\GraphicsComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\GraphicsComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\TransformComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\src\\TransformComponent.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\include\\Entity.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameFramework\\CMakeLists.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
@@ -66,10 +74,10 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 1,
-      "VerticalTabListWidth": 180,
+      "VerticalTabListWidth": 189,
       "DocumentGroups": [
         {
-          "DockedHeight": 287,
+          "DockedHeight": 286,
           "SelectedChildIndex": 0,
           "Children": [
             {
@@ -80,7 +88,7 @@
               "RelativeDocumentMoniker": "PacMan\\main.cpp",
               "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\PacMan\\main.cpp",
               "RelativeToolTip": "PacMan\\main.cpp",
-              "ViewState": "AgIAAKgAAAAAAAAAAAAkwLEAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAE4AAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-24T00:33:09.314Z",
               "IsPinned": true,
@@ -88,7 +96,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 1,
+              "Title": "Ghost.h",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Ghost.h",
+              "RelativeDocumentMoniker": "GameFramework\\include\\Ghost.h",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Ghost.h",
+              "RelativeToolTip": "GameFramework\\include\\Ghost.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-03-29T17:07:50.808Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Ghost.cpp",
+              "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Ghost.cpp",
+              "RelativeDocumentMoniker": "GameFramework\\src\\Ghost.cpp",
+              "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Ghost.cpp",
+              "RelativeToolTip": "GameFramework\\src\\Ghost.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-03-29T17:07:55.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "Scene.h",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Scene.h",
               "RelativeDocumentMoniker": "GameFramework\\include\\Scene.h",
@@ -106,25 +139,25 @@
               "RelativeDocumentMoniker": "GameFramework\\src\\Entity.cpp",
               "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Entity.cpp",
               "RelativeToolTip": "GameFramework\\src\\Entity.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-25T21:17:57.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Tile.h",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Tile.h",
               "RelativeDocumentMoniker": "GameFramework\\include\\Tile.h",
               "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Tile.h",
               "RelativeToolTip": "GameFramework\\include\\Tile.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-25T21:03:14.416Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "Tile.cpp",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Tile.cpp",
               "RelativeDocumentMoniker": "GameFramework\\src\\Tile.cpp",
@@ -136,7 +169,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "Component.h",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Component.h",
               "RelativeDocumentMoniker": "GameFramework\\include\\Component.h",
@@ -148,19 +181,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Map.cpp",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Map.cpp",
               "RelativeDocumentMoniker": "GameFramework\\src\\Map.cpp",
               "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\Map.cpp",
               "RelativeToolTip": "GameFramework\\src\\Map.cpp",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-25T20:48:32.88Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 13,
               "Title": "Map.h",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Map.h",
               "RelativeDocumentMoniker": "GameFramework\\include\\Map.h",
@@ -172,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CMakeLists.txt",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\CMakeLists.txt",
               "RelativeDocumentMoniker": "GameFramework\\CMakeLists.txt",
@@ -184,7 +217,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 9,
               "Title": "GraphicsComponent.h",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\GraphicsComponent.h",
               "RelativeDocumentMoniker": "GameFramework\\include\\GraphicsComponent.h",
@@ -196,19 +229,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GraphicsComponent.cpp",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\GraphicsComponent.cpp",
               "RelativeDocumentMoniker": "GameFramework\\src\\GraphicsComponent.cpp",
               "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\GraphicsComponent.cpp",
               "RelativeToolTip": "GameFramework\\src\\GraphicsComponent.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-03-24T04:36:48.29Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "TransformComponent.cpp",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\src\\TransformComponent.cpp",
               "RelativeDocumentMoniker": "GameFramework\\src\\TransformComponent.cpp",
@@ -220,31 +253,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "TransformComponent.h",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\TransformComponent.h",
               "RelativeDocumentMoniker": "GameFramework\\include\\TransformComponent.h",
               "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\TransformComponent.h",
               "RelativeToolTip": "GameFramework\\include\\TransformComponent.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-24T04:27:40.661Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 2,
               "Title": "Entity.h",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Entity.h",
               "RelativeDocumentMoniker": "GameFramework\\include\\Entity.h",
               "ToolTip": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\GameFramework\\include\\Entity.h",
               "RelativeToolTip": "GameFramework\\include\\Entity.h",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-03-24T04:27:35.448Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CMakeLists.txt",
               "DocumentMoniker": "C:\\Users\\mauig\\Desktop\\Docs pochos\\c\u002B\u002B\\Fundamentos\\PacMan_Project\\CMakeLists.txt",
               "RelativeDocumentMoniker": "CMakeLists.txt",
@@ -257,7 +290,7 @@
           ]
         },
         {
-          "DockedHeight": 96,
+          "DockedHeight": 97,
           "SelectedChildIndex": -1,
           "Children": [
             {
