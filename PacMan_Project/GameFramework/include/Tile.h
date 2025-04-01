@@ -11,12 +11,13 @@ public:
   Tile(int type, float x, float y, int tileSize, const sf::Vector2f& offset, const int index);
 
   void Render(sf::RenderWindow& window);
+  void SetShape();
+  void SetType(int newType);
 
   inline const sf::RectangleShape& GetShape() const
   {
     return m_shape;
   }
-
   inline const sf::FloatRect& GetBounds() const
   {
     return GetShape().getGlobalBounds();

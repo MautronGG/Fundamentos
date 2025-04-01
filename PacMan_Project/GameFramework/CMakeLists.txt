@@ -3,7 +3,12 @@ add_library(GameFramework STATIC
     src/Scene.cpp
     src/GraphicsComponent.cpp
     src/TransformComponent.cpp 
-    src/Map.cpp "src/Tile.cpp" "include/Ghost.h")
+    src/Map.cpp 
+    src/Tile.cpp 
+    src/Ghost.cpp 
+    #src/GameManager.cpp 
+    src/Pac.cpp
+)
 
 target_include_directories(GameFramework PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include

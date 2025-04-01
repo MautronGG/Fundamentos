@@ -3741,6 +3741,24 @@ build GameFramework\CMakeFiles\GameFramework.dir\src\Tile.cpp.obj: CXX_COMPILER_
   TARGET_COMPILE_PDB = GameFramework\CMakeFiles\GameFramework.dir\GameFramework.pdb
   TARGET_PDB = lib\GameFramework.pdb
 
+build GameFramework\CMakeFiles\GameFramework.dir\src\Ghost.cpp.obj: CXX_COMPILER__GameFramework_unscanned_Debug C$:\Users\mauig\Desktop\Docs$ pochos\c++\Fundamentos\PacMan_Project\GameFramework\src\Ghost.cpp || cmake_object_order_depends_target_GameFramework
+  DEFINES = -DSFML_STATIC
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -I"C:\Users\mauig\Desktop\Docs pochos\c++\Fundamentos\PacMan_Project\GameFramework\include" -external:I"C:\Users\mauig\Desktop\Docs pochos\c++\Fundamentos\PacMan_Project\out\build\x64-debug\_deps\sfml-src\include" -external:W0
+  OBJECT_DIR = GameFramework\CMakeFiles\GameFramework.dir
+  OBJECT_FILE_DIR = GameFramework\CMakeFiles\GameFramework.dir\src
+  TARGET_COMPILE_PDB = GameFramework\CMakeFiles\GameFramework.dir\GameFramework.pdb
+  TARGET_PDB = lib\GameFramework.pdb
+
+build GameFramework\CMakeFiles\GameFramework.dir\src\Pac.cpp.obj: CXX_COMPILER__GameFramework_unscanned_Debug C$:\Users\mauig\Desktop\Docs$ pochos\c++\Fundamentos\PacMan_Project\GameFramework\src\Pac.cpp || cmake_object_order_depends_target_GameFramework
+  DEFINES = -DSFML_STATIC
+  FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1 -std:c++17
+  INCLUDES = -I"C:\Users\mauig\Desktop\Docs pochos\c++\Fundamentos\PacMan_Project\GameFramework\include" -external:I"C:\Users\mauig\Desktop\Docs pochos\c++\Fundamentos\PacMan_Project\out\build\x64-debug\_deps\sfml-src\include" -external:W0
+  OBJECT_DIR = GameFramework\CMakeFiles\GameFramework.dir
+  OBJECT_FILE_DIR = GameFramework\CMakeFiles\GameFramework.dir\src
+  TARGET_COMPILE_PDB = GameFramework\CMakeFiles\GameFramework.dir\GameFramework.pdb
+  TARGET_PDB = lib\GameFramework.pdb
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target GameFramework
@@ -3749,7 +3767,7 @@ build GameFramework\CMakeFiles\GameFramework.dir\src\Tile.cpp.obj: CXX_COMPILER_
 #############################################
 # Link the static library lib\GameFramework.lib
 
-build lib\GameFramework.lib: CXX_STATIC_LIBRARY_LINKER__GameFramework_Debug GameFramework\CMakeFiles\GameFramework.dir\src\Entity.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Scene.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\GraphicsComponent.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\TransformComponent.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Map.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Tile.cpp.obj || lib\freetyped.lib lib\sfml-graphics-s-d.lib lib\sfml-system-s-d.lib lib\sfml-window-s-d.lib
+build lib\GameFramework.lib: CXX_STATIC_LIBRARY_LINKER__GameFramework_Debug GameFramework\CMakeFiles\GameFramework.dir\src\Entity.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Scene.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\GraphicsComponent.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\TransformComponent.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Map.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Tile.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Ghost.cpp.obj GameFramework\CMakeFiles\GameFramework.dir\src\Pac.cpp.obj || lib\freetyped.lib lib\sfml-graphics-s-d.lib lib\sfml-system-s-d.lib lib\sfml-window-s-d.lib
   LANGUAGE_COMPILE_FLAGS = /DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Zi /Ob0 /Od /RTC1
   LINK_FLAGS = /machine:x64
   OBJECT_DIR = GameFramework\CMakeFiles\GameFramework.dir

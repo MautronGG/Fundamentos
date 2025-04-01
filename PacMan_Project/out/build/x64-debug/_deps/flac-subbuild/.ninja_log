@@ -1,37 +1,37 @@
 # ninja log v6
 5	110	7644794345179817	flac-populate-prefix/src/flac-populate-stamp/flac-populate-mkdir	6c75a9d6a4a0f6a3
 5	110	7644794345179817	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-mkdir	6c75a9d6a4a0f6a3
-20	148	7646397938854394	flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
+18	147	7651760206389465	flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
 112	3738	7644794381458635	flac-populate-prefix/src/flac-populate-stamp/flac-populate-download	65d9752850805415
 112	3738	7644794381458635	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-download	65d9752850805415
-20	148	7646397938854394	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
-148	212	7646397940728268	flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
-148	212	7646397940728268	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
-213	270	7646397941290787	flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
-213	270	7646397941290787	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
-270	330	7646397941896230	flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
-270	330	7646397941896230	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
-331	396	7646397942546251	flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
-331	396	7646397942546251	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
-396	448	7646397943078936	flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
-396	448	7646397943078936	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
-449	535	7646397943920217	CMakeFiles/flac-populate-complete	d25abed64e1ca997
-449	535	7646397943920217	flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997
-449	535	7646397943920217	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/CMakeFiles/flac-populate-complete	d25abed64e1ca997
-449	535	7646397943920217	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997
-20	144	7649712766195247	flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
-20	144	7649712766195247	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
-145	252	7649712768449326	flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
-145	252	7649712768449326	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
-252	304	7649712768982001	flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
-252	304	7649712768982001	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
-305	356	7649712769498503	flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
-305	356	7649712769498503	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
-356	416	7649712770101048	flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
-356	416	7649712770101048	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
-417	471	7649712770649902	flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
-417	471	7649712770649902	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
-472	542	7649712771365157	CMakeFiles/flac-populate-complete	d25abed64e1ca997
-472	542	7649712771365157	flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997
-472	542	7649712771365157	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/CMakeFiles/flac-populate-complete	d25abed64e1ca997
-472	542	7649712771365157	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997
+18	147	7651760206389465	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
+147	208	7651760208219968	flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
+147	208	7651760208219968	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
+208	267	7651760208825205	flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
+208	267	7651760208825205	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
+268	319	7651760209345225	flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
+268	319	7651760209345225	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
+319	369	7651760209848569	flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
+319	369	7651760209848569	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
+369	426	7651760210418613	flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
+369	426	7651760210418613	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
+427	496	7651760211114193	CMakeFiles/flac-populate-complete	d25abed64e1ca997
+427	496	7651760211114193	flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997
+427	496	7651760211114193	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/CMakeFiles/flac-populate-complete	d25abed64e1ca997
+427	496	7651760211114193	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997
+25	154	7651760481385280	flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
+25	154	7651760481385280	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-update	503eb6adc4dad403
+154	215	7651760483220246	flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
+154	215	7651760483220246	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-patch	679a6ba983fe8424
+215	276	7651760483834663	flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
+215	276	7651760483834663	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-configure	ad9b0cce619d551f
+276	326	7651760484340929	flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
+276	326	7651760484340929	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-build	fe0d51a0a9186eca
+326	376	7651760484830923	flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
+326	376	7651760484830923	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-install	ab03d96fc2682311
+376	429	7651760485362041	flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
+376	429	7651760485362041	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-test	4876a7e0b0fb524b
+429	503	7651760486112088	CMakeFiles/flac-populate-complete	d25abed64e1ca997
+429	503	7651760486112088	flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997
+429	503	7651760486112088	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/CMakeFiles/flac-populate-complete	d25abed64e1ca997
+429	503	7651760486112088	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/flac-subbuild/flac-populate-prefix/src/flac-populate-stamp/flac-populate-done	d25abed64e1ca997

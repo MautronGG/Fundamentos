@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include <memory>
-#include <random>
 #include <optional>
 #include <string>
 #include <filesystem>
@@ -13,45 +12,50 @@
 #include "TransformComponent.h"
 #include "Map.h"
 #include "Ghost.h"
+#include "Pac.h"
+#include "GameManager.h"
 
 const std::string ASSETS_PATH = "C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/Assets/";
 
 typedef void (*loadModFunc)();
+enum class Direction;
+struct Vector3;
+enum class GameState;
 
-enum class Direction { Left, Right, Up, Down };
+void MainMenu(Scene& menuScene, sf::RenderWindow& window);
+void GameLoop(std::shared_ptr<Pac>& player, std::vector<std::shared_ptr<Ghost>>& enemiesArray, Scene& gameScene, Map& gameMap, sf::RenderWindow& window, GameManager& manager, const std::vector<std::shared_ptr<Tile>>& tiles);
+void PauseMenu();
+void GameOver();
 
+int App();
 
-void UpdateScene(Scene& scene);
+void UpdateScene(Scene& scene, const std::vector<std::shared_ptr<Tile>>& tiles);
 void RenderScene(const Scene& scene, sf::RenderWindow& window);
+
 bool CheckCollision(const sf::FloatRect& playerBounds, const std::vector<std::shared_ptr<Tile>>& tiles);
 void DrawBounds(sf::RenderWindow& window, const sf::FloatRect& bounds, const sf::Color& color);
-bool CheckNextTile(bool isPLayer, Vector3& nextTile, const std::vector<std::shared_ptr<Tile>> tiles, std::weak_ptr<Transform>& tileTransformWeak, std::shared_ptr<Transform>& tileTransform);
-void MovePlayer(bool& isMoving, Vector3& tryNextTile, Vector3& nextTile, Direction& direction, std::weak_ptr<Transform>& tileTransformWeak, std::shared_ptr<Transform>& tileTransform, std::weak_ptr<Transform>& playerTransformWeak, std::shared_ptr<Transform>& playerTransform, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset);
-int GetRandomNumber(int min, int max);
-void MoveEnemy(std::vector<std::shared_ptr<Ghost>>& enemiesArray, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset);
-//void loadMods(const Scene& scene, const Entity* player);
+//bool CheckNextTile(bool isPLayer, Vector3& nextTile, const std::vector<std::shared_ptr<Tile>> tiles, std::weak_ptr<Transform>& tileTransformWeak, std::shared_ptr<Transform>& tileTransform);
 
-struct Vector3;
+//void MovePlayer(bool& isMoving, Vector3& tryNextTile, Vector3& nextTile, Direction& direction, std::weak_ptr<Transform>& tileTransformWeak, std::shared_ptr<Transform>& tileTransform, std::shared_ptr<Transform>& playerTransform, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset);
+
+//int GetRandomNumber(int min, int max);
+//void MoveEnemy(std::vector<std::shared_ptr<Ghost>>& enemiesArray, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset);
+
+void Respawn(std::shared_ptr <Pac> player, std::vector<std::shared_ptr<Ghost>>& enemiesArray);
+//void loadMods(const Scene& scene, const Entity* player);
 
 int main()
 {
-  auto window = sf::RenderWindow(sf::VideoMode({ 1920u, 1080u }), "CMake SFML Project");
+  App();
+}
+
+int App()
+{
+  auto window = sf::RenderWindow(sf::VideoMode({ 1920u, 1080u }), "CMake SFML Project", sf::State::Fullscreen);
   window.setFramerateLimit(144);
 
-  int lives = 3;
-  float speed = 2.0f;
-
-  Direction playerDirection = Direction::Right;
-
-  bool playerIsMoving = false;
-
-  int currentPosX = 0;
-  int currentPosY = 0;
-  //int currentPos = levelLayout[currentPosX] + (currentPosY * ysize);
-
-  //sf::Texture pacManTexture(ASSETS_PATH + "pacMan.png");
-  //sf::Texture ghostTexture(ASSETS_PATH + "ghost.png");
-  //sf::Texture levelTexture(ASSETS_PATH + "level.png");
+  Scene menuScene;
+  Scene gameScene;
 
   sf::Texture pacManTexture;
   if (!pacManTexture.loadFromFile(ASSETS_PATH + "pacMan35.png"))
@@ -73,74 +77,84 @@ int main()
     std::cerr << "Failed to load level.png" << std::endl;
     return -1;
   }
-  std::shared_ptr<Entity> player = std::make_shared<Entity>();
+
+  std::shared_ptr<Pac> player = std::make_shared<Pac>();
   player->AddComponent<GraphicsComponent>(pacManTexture);
 
   std::shared_ptr<Entity> level = std::make_shared<Entity>();
   level->AddComponent<GraphicsComponent>(levelTexture);
 
-  std::weak_ptr<Transform> playerTransformWeak = player->GetComponent<Transform>();
-  std::shared_ptr<Transform> playerTransform = playerTransformWeak.lock();
+  Direction playerDirection = Direction::Right;
 
   std::weak_ptr<Transform> levelTransformWeak = level->GetComponent<Transform>();
   std::shared_ptr<Transform> levelTransform = levelTransformWeak.lock();
   levelTransform->position.x = 480;
   levelTransform->position.y = 0;
 
-  Scene scene;
-
-  scene.AddEntity(level);
-  scene.AddEntity(player);
+  gameScene.AddEntity(level);
 
   sf::Vector2f offset({ levelTransform->position.x, levelTransform->position.y });
   Map gameMap(offset);
 
-  // Create tiles (example)
   std::vector<std::shared_ptr<Tile>> tiles = gameMap.GetTiles();
 
-  int centerOffset = 5;
+  player->m_startingTile = gameMap.GetStartingTile();
 
-  Vector3 sTile = gameMap.GetStartingTile();
-  std::cout << "Starting Tile type: " << sTile.type << std::endl;
-  std::cout << "Starting Tile Index: " << sTile.index << std::endl;
-  std::cout << "Starting Tile Position: ( " << sTile.x << ", " << sTile.y << std::endl;
-
-  std::weak_ptr<Transform> tileTransformWeak = tiles[sTile.index]->GetComponent<Transform>();
-  std::shared_ptr<Transform> tileTransform = tileTransformWeak.lock();
-
-  playerTransform->position.x = tileTransform->position.x + centerOffset;
-  playerTransform->position.y = tileTransform->position.y + centerOffset;
-
+  std::cout << "Starting Tile type: " << player->m_startingTile.type << std::endl;
+  std::cout << "Starting Tile Index: " << player->m_startingTile.index << std::endl;
+  std::cout << "Starting Tile Position: ( " << player->m_startingTile.x << ", " << player->m_startingTile.y << std::endl;
+  
   int tileSize = gameMap.GetTileSize();
+  
+  player->m_transformWeak = player->GetComponent<Transform>();
+  player->m_transform = player->m_transformWeak.lock();
 
-  player->m_nextTile = sTile;
+  player->m_tileTransformWeak = tiles[player->m_startingTile.index]->GetComponent<Transform>();
+  player->m_tileTransform = player->m_tileTransformWeak.lock();
+
+  player->m_transform->position.x = player->m_tileTransform->position.x + player->m_centerOffset;
+  player->m_transform->position.y = player->m_tileTransform->position.y + player->m_centerOffset;
+
+  player->m_nextTile = player->m_startingTile;
   player->m_tryNextTile = player->m_nextTile;
 
+  player->tiles = tiles;
+  player->SetStartingTiles(gameMap.GetStartingTile());
+  gameScene.AddEntity(player);
+
   std::vector<std::shared_ptr<Ghost>> enemiesArray;
-  sTile = gameMap.GetGhostTile();
+  Vector3 ghostSTile = gameMap.GetGhostTile();
+
   for (int i = 0; i < 4; i++)
   {
     std::shared_ptr<Ghost> enemy = std::make_shared<Ghost>();
     enemy->AddComponent<GraphicsComponent>(ghostTexture);
 
-    enemy->enemyTransformWeak = enemy->GetComponent<Transform>();
-    enemy->enemyTransform = enemy->enemyTransformWeak.lock();
+    enemy->m_transformWeak = enemy->GetComponent<Transform>();
+    enemy->m_transform = enemy->m_transformWeak.lock();
 
-    scene.AddEntity(enemy);
 
-    enemy->m_nextTile = sTile;
+    enemy->m_startingTile = ghostSTile;
+
+    enemy->m_nextTile = enemy->m_startingTile;
     enemy->m_tryNextTile = enemy->m_nextTile;
 
-    enemy->ghostTileTransformWeak = tiles[sTile.index]->GetComponent<Transform>();
-    enemy->ghostTileTransform = enemy->ghostTileTransformWeak.lock();
+    enemy->m_tileTransformWeak = tiles[enemy->m_startingTile.index]->GetComponent<Transform>();
+    enemy->m_tileTransform = enemy->m_tileTransformWeak.lock();
 
-    enemy->enemyTransform->position.x = enemy->ghostTileTransform->position.x + centerOffset;
-    enemy->enemyTransform->position.y = enemy->ghostTileTransform->position.y + centerOffset;
+    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + enemy->m_centerOffset;
+    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + enemy->m_centerOffset;
 
-    enemy->enemyDirection = Direction::Up;
+    enemy->tiles = tiles;
+    enemy->m_direction = Direction::Up;
 
+    enemy->SetStartingTiles(gameMap.GetGhostTile());
     enemiesArray.push_back(enemy);
+    gameScene.AddEntity(enemy);
   }
+
+  GameManager& manager = GameManager::instance();
+  //Scene scene;
 
   while (window.isOpen())
   {
@@ -148,56 +162,95 @@ int main()
     window.clear(screenColor);
 
     while (const std::optional event = window.pollEvent())
-    {
-      if (event->is<sf::Event::Closed>())
       {
-        window.close();
-      }
-    }
- 
-    
-    //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
-    //{
-    //  std::cout << "Current Position: " << playerTransform->position.x << ", " << playerTransform->position.y << std::endl;
-    //}
-
-    sf::FloatRect playerBounds = player->GetComponent<GraphicsComponent>().lock()->GetBounds();
-    
-    for each(std::shared_ptr<Entity> enemy in enemiesArray)
-    {
-      sf::FloatRect enemyBounds = enemy->GetComponent<GraphicsComponent>().lock()->GetBounds();
-      DrawBounds(window, enemyBounds, sf::Color::Red);
-      if (const std::optional intersection = playerBounds.findIntersection(enemyBounds))
-      {
-        lives--;
-        //respawn
-        //std::cout << "Impact" << "\n";
-        if (lives <= 0)
+        if (event->is<sf::Event::Closed>())
         {
-          //std::cout << "Die" << "\n";
-          //restart game
+          window.close();
         }
       }
+
+    switch (manager.GetGameState())
+    {
+      case GameState::MainMenu:
+        MainMenu(menuScene, window);
+        break;
+        //scene = menuScene;
+      case GameState::GameLoop:
+        GameLoop(player, enemiesArray, gameScene, gameMap, window, manager, tiles);
+        break;
+        //scene = gameScene;
+      case GameState::PauseMenu:
+        PauseMenu();
+        break;
+      case GameState::GameOver:
+        GameOver();
+        break;
+      default:
+        break;
     }
-
-    MovePlayer(playerIsMoving, player->m_tryNextTile, player->m_nextTile, playerDirection, tileTransformWeak, tileTransform, playerTransformWeak, playerTransform, tiles, speed, centerOffset);
-    MoveEnemy(enemiesArray, tiles, speed, centerOffset);
-    UpdateScene(scene);
-    gameMap.Render(window);
-    RenderScene(scene, window);
-
-    // Draw bounding boxes
-    DrawBounds(window, playerBounds, sf::Color::Green);
-
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape))
+    {
+      window.close();
+    }
     window.display();
   }
 }
 
-void UpdateScene(Scene& scene)
+void MainMenu(Scene& menuScene, sf::RenderWindow& window)
+{
+  //UpdateScene(menuScene);
+  RenderScene(menuScene, window);
+}
+void GameLoop(std::shared_ptr<Pac>& player, std::vector<std::shared_ptr<Ghost>>& enemiesArray, Scene& gameScene, Map& gameMap, sf::RenderWindow& window, GameManager& manager, const std::vector<std::shared_ptr<Tile>>& tiles)
+{
+  //MovePlayer(playerIsMoving, player->m_tryNextTile, player->m_nextTile, playerDirection, tileTransformWeak, tileTransform, playerTransform, tiles, speed, centerOffset);
+  //MoveEnemy(enemiesArray, tiles, speed, centerOffset);
+  UpdateScene(gameScene, tiles);
+  gameMap.Render(window);
+  RenderScene(gameScene, window);
+
+  //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::E))
+  //{
+  //  std::cout << "Current Position: " << playerTransform->position.x << ", " << playerTransform->position.y << std::endl;
+  //}
+  sf::FloatRect playerBounds = player->GetComponent<GraphicsComponent>().lock()->GetBounds();
+
+  for each(std::shared_ptr<Ghost> enemy in enemiesArray)
+  {
+    sf::FloatRect enemyBounds = enemy->GetComponent<GraphicsComponent>().lock()->GetBounds();
+    DrawBounds(window, enemyBounds, sf::Color::Red);
+    if (const std::optional intersection = playerBounds.findIntersection(enemyBounds))
+    {
+      player->m_lives--;
+      Respawn(player, enemiesArray);
+      continue;
+      std::cout << "Impact" << "\n";
+      if (player->m_lives <= 0)
+      {
+        manager.SetGameState(GameState::GameOver);
+        continue;
+      }
+    }
+  }
+
+  DrawBounds(window, playerBounds, sf::Color::Green);
+  // Draw bounding boxes
+
+}
+void PauseMenu()
+{
+
+}
+void GameOver()
+{
+
+}
+
+void UpdateScene(Scene& scene, const std::vector<std::shared_ptr<Tile>>& tiles)
 {
   for (const auto& entity : scene.GetEntities())
   {
-    entity->Update(/*DeltaTime*/);
+    entity->Update(tiles);
   }
 }
 void RenderScene(const Scene& scene, sf::RenderWindow& window)
@@ -213,6 +266,7 @@ void RenderScene(const Scene& scene, sf::RenderWindow& window)
     }
   }
 }
+
 bool CheckCollision(const sf::FloatRect& playerBounds, const std::vector<std::shared_ptr<Tile>>& tiles)
 {
   for (const auto& tile : tiles)
@@ -234,268 +288,154 @@ void DrawBounds(sf::RenderWindow& window, const sf::FloatRect& bounds, const sf:
   rectangle.setOutlineThickness(1.0f);
   window.draw(rectangle);
 }
-bool CheckNextTile(bool isPlayer, Vector3& nextTile, const std::vector<std::shared_ptr<Tile>> tiles, std::weak_ptr<Transform>& tileTransformWeak,  std::shared_ptr<Transform>& tileTransform)
+
+//int GetRandomNumber(int min, int max)
+//{
+//  static std::random_device rd;
+//  static std::mt19937 gen(rd());
+//  std::uniform_int_distribution<> dis(min, max);
+//  return dis(gen);
+//}
+//void MoveEnemy(std::vector<std::shared_ptr<Ghost>>& enemiesArray, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset)
+//{
+//  for each(std::shared_ptr<Ghost> enemy in enemiesArray)
+//  {
+//    if (!enemy->enemyIsMoving)
+//    {
+//      enemy->m_tryNextTile = enemy->m_nextTile;
+//      int randomValue = GetRandomNumber(0, 17);
+//      switch (randomValue)
+//      {
+//      case 0:
+//        enemy->m_tryNextTile.x--;
+//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
+//        {
+//          enemy->enemyDirection = Direction::Left;
+//        }
+//        break;
+//      case 1:
+//        enemy->m_tryNextTile.x++;
+//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
+//        {
+//          enemy->enemyDirection = Direction::Right;
+//        }
+//        break;
+//      case 2:
+//        enemy->m_tryNextTile.y--;
+//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
+//        {
+//          enemy->enemyDirection = Direction::Up;
+//        }
+//        break;
+//      case 3:
+//        enemy->m_tryNextTile.y++;
+//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
+//        {
+//          enemy->enemyDirection = Direction::Down;
+//        }
+//        break;
+//      default:
+//        break;
+//      }
+//
+//      enemy->m_tryNextTile = enemy->m_nextTile;
+//
+//      switch (enemy->enemyDirection)
+//      {
+//      case Direction::Left:
+//        enemy->m_tryNextTile.x--;
+//        break;
+//      case Direction::Right:
+//        enemy->m_tryNextTile.x++;
+//        break;
+//      case Direction::Up:
+//        enemy->m_tryNextTile.y--;
+//        break;
+//      case Direction::Down:
+//        enemy->m_tryNextTile.y++;
+//        break;
+//      default:
+//        break;
+//      }
+//
+//      bool checkAdvance = CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform);
+//      if (checkAdvance)
+//      {
+//        enemy->enemyIsMoving = true;
+//        enemy->m_nextTile = enemy->m_tryNextTile;
+//      }
+//    }
+//
+//    if (enemy->enemyIsMoving)
+//    {
+//      switch (enemy->enemyDirection)
+//      {
+//      case Direction::Left:
+//        enemy->enemyTransform->position.x -= speed;
+//        if (static_cast<int>(enemy->enemyTransform->position.x) <= enemy->ghostTileTransform->position.x + centerOffset)
+//        {
+//          enemy->enemyTransform->position.x = enemy->ghostTileTransform->position.x + centerOffset;
+//          enemy->enemyIsMoving = false;
+//        }
+//        break;
+//      case Direction::Right:
+//        enemy->enemyTransform->position.x += speed;
+//        if (static_cast<int>(enemy->enemyTransform->position.x) >= enemy->ghostTileTransform->position.x + centerOffset)
+//        {
+//          enemy->enemyTransform->position.x = enemy->ghostTileTransform->position.x + centerOffset;
+//          enemy->enemyIsMoving = false;
+//        }
+//        break;
+//      case Direction::Up:
+//        enemy->enemyTransform->position.y -= speed;
+//        if (static_cast<int>(enemy->enemyTransform->position.y) <= enemy->ghostTileTransform->position.y + centerOffset)
+//        {
+//          enemy->enemyTransform->position.y = enemy->ghostTileTransform->position.y + centerOffset;
+//          enemy->enemyIsMoving = false;
+//        }
+//        break;
+//      case Direction::Down:
+//        enemy->enemyTransform->position.y += speed;
+//        if (static_cast<int>(enemy->enemyTransform->position.y) >= enemy->ghostTileTransform->position.y + centerOffset)
+//        {
+//          enemy->enemyTransform->position.y = enemy->ghostTileTransform->position.y + centerOffset;
+//          enemy->enemyIsMoving = false;
+//        }
+//        break;
+//      default:
+//        break;
+//      }
+//    }
+//  }
+//}
+
+void Respawn(std::shared_ptr <Pac> player, std::vector<std::shared_ptr<Ghost>>& enemiesArray)
 {
-  nextTile.index = (nextTile.y * 28) + nextTile.x;
+  player->m_nextTile = player->m_startingTile;
+  player->m_tryNextTile = player->m_nextTile;
 
-  tileTransformWeak = tiles[nextTile.index]->GetComponent<Transform>();
-  tileTransform = tileTransformWeak.lock();
+  player->m_tileTransformWeak = player->tiles[player->m_startingTile.index]->GetComponent<Transform>();
+  player->m_tileTransform = player->m_tileTransformWeak.lock();
 
-  nextTile = tiles[nextTile.index]->GetInfo();
+  player->m_transform->position.x = player->m_tileTransform->position.x + player->m_centerOffset;
+  player->m_transform->position.y = player->m_tileTransform->position.y + player->m_centerOffset;
 
-  if (nextTile.index >= 0 && nextTile.index < static_cast<int>(tiles.size()) && nextTile.type != 0)
-  {
-    if (isPlayer)
-    {
-      if (nextTile.type != 4)
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    }
-  }
-  else
-  {
-    return false;
-  }
-}
-void MovePlayer(bool& isMoving, Vector3& tryNextTile, Vector3& nextTile, Direction& direction, std::weak_ptr<Transform>& tileTransformWeak, std::shared_ptr<Transform>& tileTransform, std::weak_ptr<Transform>& playerTransformWeak, std::shared_ptr<Transform>& playerTransform, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset)
-{
-  if (!isMoving)
-  {
-    tryNextTile = nextTile;
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
-    {
-      tryNextTile.x--;
-      if (CheckNextTile(true, tryNextTile, tiles, tileTransformWeak, tileTransform))
-      {
-        direction = Direction::Left;
-      }
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
-    {
-      tryNextTile.x++;
-      if (CheckNextTile(true, tryNextTile, tiles, tileTransformWeak, tileTransform))
-      {
-        direction = Direction::Right;
-      }
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
-    {
-      //std::cout << "ReachedNextTile: Type: " << nextTile.type << "  Index: " << nextTile.index << "  Pos: (" << nextTile.x << ", " << nextTile.y << ")" << std::endl;
-      tryNextTile.y--;
-      if (CheckNextTile(true, tryNextTile, tiles, tileTransformWeak, tileTransform))
-      {
-        direction = Direction::Up;
-      }
-    }
-    else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
-    {
-      tryNextTile.y++;
-      if (CheckNextTile(true, tryNextTile, tiles, tileTransformWeak, tileTransform))
-      {
-        direction = Direction::Down;
-      }
-    }
-    tryNextTile = nextTile;
+  player->m_direction = Direction::Right;
 
-    switch (direction)
-    {
-    case Direction::Left:
-      tryNextTile.x--;
-      //playerTransform->rotation = 180;
-      break;
-    case Direction::Right:
-      tryNextTile.x++;
-      //playerTransform->rotation = 0;
-      break;
-    case Direction::Up:
-      tryNextTile.y--;
-      //playerTransform->rotation = -90;
-      break;
-    case Direction::Down:
-      tryNextTile.y++;
-      //playerTransform->rotation = 90;
-      break;
-    default:
-      break;
-    }
-
-    bool checkAdvance = CheckNextTile(true, tryNextTile, tiles, tileTransformWeak, tileTransform);
-    if (checkAdvance)
-    {
-      isMoving = true;
-      nextTile = tryNextTile;
-    }
-  }
-
-  if (isMoving)
-  {
-    switch (direction)
-    {
-    case Direction::Left:
-      playerTransform->position.x -= speed;
-      if (static_cast<int>(playerTransform->position.x) <= tileTransform->position.x + centerOffset)
-      {
-        playerTransform->position.x = tileTransform->position.x + centerOffset;
-        isMoving = false;
-        //std::cout << "ReachedNextTile: Type: " << nextTile.type << "  Index: " << nextTile.index << "  Pos: (" << nextTile.x << ", " << nextTile.y << ")" << std::endl;
-      }
-      break;
-    case Direction::Right:
-      playerTransform->position.x += speed;
-      if (static_cast<int>(playerTransform->position.x) >= tileTransform->position.x + centerOffset)
-      {
-        playerTransform->position.x = tileTransform->position.x + centerOffset;
-        isMoving = false;
-        //std::cout << "ReachedNextTile: Type: " << nextTile.type << "  Index: " << nextTile.index << "  Pos: (" << nextTile.x << ", " << nextTile.y << ")" << std::endl;
-      }
-      break;
-    case Direction::Up:
-      playerTransform->position.y -= speed;
-      if (static_cast<int>(playerTransform->position.y) <= tileTransform->position.y + centerOffset)
-      {
-        playerTransform->position.y = tileTransform->position.y + centerOffset;
-        isMoving = false;
-        //std::cout << "ReachedNextTile: Type: " << nextTile.type << "  Index: " << nextTile.index << "  Pos: (" << nextTile.x << ", " << nextTile.y << ")" << std::endl;
-      }
-      break;
-    case Direction::Down:
-      playerTransform->position.y += speed;
-      if (static_cast<int>(playerTransform->position.y) >= tileTransform->position.y + centerOffset)
-      {
-        playerTransform->position.y = tileTransform->position.y + centerOffset;
-        isMoving = false;
-        //std::cout << "ReachedNextTile: Type: " << nextTile.type << "  Index:" << nextTile.index << "  Pos: (" << nextTile.x << ", " << nextTile.y << ")" << std::endl;
-      }
-      break;
-    default:
-      break;
-    }
-  }
-}
-
-int GetRandomNumber(int min, int max)
-{
-  static std::random_device rd;
-  static std::mt19937 gen(rd());
-  std::uniform_int_distribution<> dis(min, max);
-  return dis(gen);
-}
-void MoveEnemy(std::vector<std::shared_ptr<Ghost>>& enemiesArray, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset)
-{
   for each(std::shared_ptr<Ghost> enemy in enemiesArray)
   {
-    if (!enemy->enemyIsMoving)
-    {
-      enemy->m_tryNextTile = enemy->m_nextTile;
-      int randomValue = GetRandomNumber(0, 17);
-      switch (randomValue)
-      {
-      case 0:
-        enemy->m_tryNextTile.x--;
-        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-        {
-          enemy->enemyDirection = Direction::Left;
-        }
-        break;
-      case 1:
-        enemy->m_tryNextTile.x++;
-        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-        {
-          enemy->enemyDirection = Direction::Right;
-        }
-        break;
-      case 2:
-        enemy->m_tryNextTile.y--;
-        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-        {
-          enemy->enemyDirection = Direction::Up;
-        }
-        break;
-      case 3:
-        enemy->m_tryNextTile.y++;
-        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-        {
-          enemy->enemyDirection = Direction::Down;
-        }
-        break;
-      default:
-        break;
-      }
+    enemy->m_nextTile = enemy->m_startingTile;
+    enemy->m_tryNextTile = enemy->m_nextTile;
 
-      enemy->m_tryNextTile = enemy->m_nextTile;
+    enemy->m_tileTransformWeak = player->tiles[enemy->m_startingTile.index]->GetComponent<Transform>();
+    enemy->m_tileTransform = enemy->m_tileTransformWeak.lock();
 
-      switch (enemy->enemyDirection)
-      {
-      case Direction::Left:
-        enemy->m_tryNextTile.x--;
-        break;
-      case Direction::Right:
-        enemy->m_tryNextTile.x++;
-        break;
-      case Direction::Up:
-        enemy->m_tryNextTile.y--;
-        break;
-      case Direction::Down:
-        enemy->m_tryNextTile.y++;
-        break;
-      default:
-        break;
-      }
+    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + player->m_centerOffset;
+    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + player->m_centerOffset;
 
-      bool checkAdvance = CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform);
-      if (checkAdvance)
-      {
-        enemy->enemyIsMoving = true;
-        enemy->m_nextTile = enemy->m_tryNextTile;
-      }
-    }
-
-    if (enemy->enemyIsMoving)
-    {
-      switch (enemy->enemyDirection)
-      {
-      case Direction::Left:
-        enemy->enemyTransform->position.x -= speed;
-        if (static_cast<int>(enemy->enemyTransform->position.x) <= enemy->ghostTileTransform->position.x + centerOffset)
-        {
-          enemy->enemyTransform->position.x = enemy->ghostTileTransform->position.x + centerOffset;
-          enemy->enemyIsMoving = false;
-        }
-        break;
-      case Direction::Right:
-        enemy->enemyTransform->position.x += speed;
-        if (static_cast<int>(enemy->enemyTransform->position.x) >= enemy->ghostTileTransform->position.x + centerOffset)
-        {
-          enemy->enemyTransform->position.x = enemy->ghostTileTransform->position.x + centerOffset;
-          enemy->enemyIsMoving = false;
-        }
-        break;
-      case Direction::Up:
-        enemy->enemyTransform->position.y -= speed;
-        if (static_cast<int>(enemy->enemyTransform->position.y) <= enemy->ghostTileTransform->position.y + centerOffset)
-        {
-          enemy->enemyTransform->position.y = enemy->ghostTileTransform->position.y + centerOffset;
-          enemy->enemyIsMoving = false;
-        }
-        break;
-      case Direction::Down:
-        enemy->enemyTransform->position.y += speed;
-        if (static_cast<int>(enemy->enemyTransform->position.y) >= enemy->ghostTileTransform->position.y + centerOffset)
-        {
-          enemy->enemyTransform->position.y = enemy->ghostTileTransform->position.y + centerOffset;
-          enemy->enemyIsMoving = false;
-        }
-        break;
-      default:
-        break;
-      }
-    }
+    enemy->m_direction = Direction::Up;
   }
+
 }
 //void LoadMods(const Scene& scene, const Entity* player)
 //{

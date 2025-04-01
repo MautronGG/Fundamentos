@@ -4,6 +4,9 @@
 #include <memory>
 
 class Component;
+class Transform;
+class Tile;
+
 struct Vector3
 {
   int type = 0;
@@ -11,6 +14,8 @@ struct Vector3
   float x = 0.0f;
   float y = 0.0f;
 };
+
+enum class Direction { Left, Right, Up, Down };
 
 class Entity
 {
@@ -24,14 +29,37 @@ public:
   template <typename T>
   std::weak_ptr<T> GetComponent() const;
 
-  void Update(/*DeltaTime*/);
+  virtual void Move(const std::vector<std::shared_ptr<Tile>>& tiles) {}
+  bool CheckNextTile(const std::vector<std::shared_ptr<Tile>>& tiles, Vector3& nexTile);
+
+  void Update(/*DeltaTime*/const std::vector<std::shared_ptr<Tile>>& tiles);
   
 
 private:
   std::vector<std::shared_ptr<Component>> m_components;
 public:
+  Direction m_direction = Direction::Right;
+  bool m_isMoving = false;
+  float m_speed = 2.0f;
+  bool m_isPlayer = false;
+
+  std::weak_ptr<Transform> m_tileTransformWeak;
+  std::shared_ptr<Transform> m_tileTransform;
+
+  std::weak_ptr<Transform> m_transformWeak;
+  std::shared_ptr<Transform> m_transform;
+
   Vector3 m_nextTile;
   Vector3 m_tryNextTile;
+  Vector3 m_startingTile;
+  std::vector<std::shared_ptr<Tile>> tiles;
+  int m_centerOffset = 5;
+
+  void SetStartingTiles(Vector3 start) {
+    m_nextTile = start;
+    m_tryNextTile = start;
+    m_startingTile = start;
+  }
 
 };
 

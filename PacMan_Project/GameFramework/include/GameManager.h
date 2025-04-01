@@ -1,0 +1,26 @@
+#pragma once
+
+enum class GameState { MainMenu, GameLoop, PauseMenu, GameOver };
+
+class GameManager
+{
+public:
+  static GameManager& instance()
+  {
+    static GameManager* instance = new GameManager();
+    return *instance;
+  }
+
+  GameState GetGameState() const
+  {
+    return m_gameState;
+  }
+
+  void SetGameState(GameState state)
+  {
+    m_gameState = state;
+  }
+private:
+  GameManager() {}
+  GameState m_gameState = GameState::GameLoop;
+};

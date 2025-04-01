@@ -10,6 +10,18 @@ Tile::Tile(int type, float x, float y, int tileSize, const sf::Vector2f& offset,
   tileTransform->position.y = (y * tileSize) + offset.y;
 
   m_shape.setSize(sf::Vector2f(tileSize, tileSize));
+  SetShape();
+}
+void Tile::Render(sf::RenderWindow& window)
+{
+  std::weak_ptr<Transform> tileTransformWeak = this->GetComponent<Transform>();
+  std::shared_ptr<Transform> tileTransform = tileTransformWeak.lock();
+
+  m_shape.setPosition({ tileTransform->position.x,  tileTransform->position.y });
+  window.draw(m_shape);
+}
+void Tile::SetShape()
+{
   //m_type = 1;
   switch (m_tileInfo.type)
   {
@@ -20,7 +32,7 @@ Tile::Tile(int type, float x, float y, int tileSize, const sf::Vector2f& offset,
   case 1: // Floor
     //m_shape.setSize(sf::Vector2f(10, 10));
     m_shape.setFillColor(sf::Color::Black);
-    break;  
+    break;
   case 2: // Dot
     //m_shape.setSize(sf::Vector2f(10, 10));
     m_shape.setFillColor(sf::Color::White);
@@ -47,11 +59,8 @@ Tile::Tile(int type, float x, float y, int tileSize, const sf::Vector2f& offset,
     break;
   }
 }
-void Tile::Render(sf::RenderWindow& window)
+void Tile::SetType(int newType)
 {
-  std::weak_ptr<Transform> tileTransformWeak = this->GetComponent<Transform>();
-  std::shared_ptr<Transform> tileTransform = tileTransformWeak.lock();
-
-  m_shape.setPosition({ tileTransform->position.x,  tileTransform->position.y });
-  window.draw(m_shape);
+  m_tileInfo.type = newType;
+  SetShape();
 }
