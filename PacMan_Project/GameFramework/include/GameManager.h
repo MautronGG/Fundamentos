@@ -11,7 +11,7 @@ public:
     return *instance;
   }
 
-  GameState GetGameState() const
+  inline GameState GetGameState() const
   {
     return m_gameState;
   }

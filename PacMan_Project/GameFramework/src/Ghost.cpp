@@ -22,7 +22,7 @@ void Ghost::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
     {
     case 0:
       m_tryNextTile.x--;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Left;
         //checkAdvance = true;
@@ -30,7 +30,7 @@ void Ghost::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
       break;
     case 1:
       m_tryNextTile.x++;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Right;
         //checkAdvance = true;
@@ -38,7 +38,7 @@ void Ghost::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
       break;
     case 2:
       m_tryNextTile.y--;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Up;
         //checkAdvance = true;
@@ -46,7 +46,7 @@ void Ghost::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
       break;
     case 3:
       m_tryNextTile.y++;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Down;
         //checkAdvance = true;
@@ -76,7 +76,7 @@ void Ghost::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
       break;
     }
   
-    bool checkAdvance = CheckNextTile(tiles, m_tryNextTile);
+    bool checkAdvance = CheckNextTile(m_tryNextTile);
     if (checkAdvance)
     {
       m_isMoving = true;

@@ -14,9 +14,7 @@
   "ExpandedNodes": [
     "",
     "\\GameFramework",
-    "\\GameFramework\\include",
-    "\\GameFramework\\src"
+    "\\PacMan"
   ],
-  "SelectedNode": "\\GameFramework\\include\\Entity.h",
   "PreviewInSolutionExplorer": false
 }

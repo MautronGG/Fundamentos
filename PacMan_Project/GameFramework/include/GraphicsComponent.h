@@ -1,8 +1,6 @@
 #pragma once
 
 #include "Component.h"
-#include <SFML/Graphics.hpp>
-
 class GraphicsComponent : public Component
 {
 public:

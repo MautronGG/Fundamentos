@@ -1,48 +1,47 @@
 ﻿#include <iostream>
 #include <memory>
 #include <optional>
-#include <string>
+//#include <windows.h>
+//#include <string>
 #include <filesystem>
 //#include <dlfcn.h>
 
 #include <SFML/Graphics.hpp>
+#include "MainMenu.h"
 #include "Scene.h"
 #include "Entity.h"
+//#include "GameEntity.h"
+#include "Pac.h"
+#include "Ghost.h"
 #include "GraphicsComponent.h"
 #include "TransformComponent.h"
+//#include "ScriptComponent.h"
 #include "Map.h"
-#include "Ghost.h"
-#include "Pac.h"
 #include "GameManager.h"
 
 const std::string ASSETS_PATH = "C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/Assets/";
 
-typedef void (*loadModFunc)();
+typedef void (*ComponentScript)(const Entity* parent);
+typedef ComponentScript(*LoadModFunc)(); 
+//void loadMods(const Scene& scene, Entity* player);
+
 enum class Direction;
 struct Vector3;
 enum class GameState;
 
-void MainMenu(Scene& menuScene, sf::RenderWindow& window);
+int App();
+
+void MenuMain(Scene& menuScene, sf::RenderWindow& window);
 void GameLoop(std::shared_ptr<Pac>& player, std::vector<std::shared_ptr<Ghost>>& enemiesArray, Scene& gameScene, Map& gameMap, sf::RenderWindow& window, GameManager& manager, const std::vector<std::shared_ptr<Tile>>& tiles);
 void PauseMenu();
 void GameOver();
 
-int App();
-
-void UpdateScene(Scene& scene, const std::vector<std::shared_ptr<Tile>>& tiles);
+void UpdateScene(Scene& scene);
 void RenderScene(const Scene& scene, sf::RenderWindow& window);
 
 bool CheckCollision(const sf::FloatRect& playerBounds, const std::vector<std::shared_ptr<Tile>>& tiles);
 void DrawBounds(sf::RenderWindow& window, const sf::FloatRect& bounds, const sf::Color& color);
-//bool CheckNextTile(bool isPLayer, Vector3& nextTile, const std::vector<std::shared_ptr<Tile>> tiles, std::weak_ptr<Transform>& tileTransformWeak, std::shared_ptr<Transform>& tileTransform);
-
-//void MovePlayer(bool& isMoving, Vector3& tryNextTile, Vector3& nextTile, Direction& direction, std::weak_ptr<Transform>& tileTransformWeak, std::shared_ptr<Transform>& tileTransform, std::shared_ptr<Transform>& playerTransform, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset);
-
-//int GetRandomNumber(int min, int max);
-//void MoveEnemy(std::vector<std::shared_ptr<Ghost>>& enemiesArray, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset);
-
 void Respawn(std::shared_ptr <Pac> player, std::vector<std::shared_ptr<Ghost>>& enemiesArray);
-//void loadMods(const Scene& scene, const Entity* player);
 
 int main()
 {
@@ -54,7 +53,40 @@ int App()
   auto window = sf::RenderWindow(sf::VideoMode({ 1920u, 1080u }), "CMake SFML Project", sf::State::Fullscreen);
   window.setFramerateLimit(144);
 
+  sf::Font font;
+  if (!font.openFromFile("C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/Resources/Pixeled.ttf"))
+  {
+    std::cerr << "Failed to load Pixeled.ttf" << std::endl;
+    return -1;
+  }
+  sf::Text textObject(font);
   Scene menuScene;
+  MainMenu menu;
+  std::shared_ptr<UIEntity> title = std::make_shared<UIEntity>();
+  title->SetShape(UIType::Title, 100, "PacMan", { 960, 200 }, textObject);
+  title->AddComponent<GraphicsComponent>(title->m_texture);
+  menu.AddButton(title);
+
+  std::shared_ptr<UIEntity> startButton = std::make_shared<UIEntity>();
+  startButton->SetShape(UIType::Button, 50, "Start", { 960, 500 }, textObject);
+  startButton->AddComponent<GraphicsComponent>(startButton->m_texture);
+  menu.AddButton(startButton);
+
+  std::shared_ptr<UIEntity> continueButton = std::make_shared<UIEntity>();
+  continueButton->SetShape(UIType::Button, 50, "Continue", { 960, 600 }, textObject);
+  continueButton->AddComponent<GraphicsComponent>(continueButton->m_texture);
+  menu.AddButton(continueButton);
+
+  std::shared_ptr<UIEntity> exitButton = std::make_shared<UIEntity>();
+  exitButton->SetShape(UIType::Button, 50, "Exit", { 960, 700 }, textObject);
+  exitButton->AddComponent<GraphicsComponent>(exitButton->m_texture);
+  menu.AddButton(exitButton);
+
+  for each(std::shared_ptr<UIEntity> button in menu.m_buttonArray)
+  {
+    menuScene.AddEntity(button);
+  }
+
   Scene gameScene;
 
   sf::Texture pacManTexture;
@@ -86,14 +118,15 @@ int App()
 
   Direction playerDirection = Direction::Right;
 
-  std::weak_ptr<Transform> levelTransformWeak = level->GetComponent<Transform>();
-  std::shared_ptr<Transform> levelTransform = levelTransformWeak.lock();
-  levelTransform->position.x = 480;
-  levelTransform->position.y = 0;
+  level->m_transformWeak = level->GetComponent<Transform>();
+  level->m_transform = level->m_transformWeak.lock();
+
+  level->m_transform->position.x = 960;
+  level->m_transform->position.y = 540;
 
   gameScene.AddEntity(level);
 
-  sf::Vector2f offset({ levelTransform->position.x, levelTransform->position.y });
+  sf::Vector2f offset({ 489, 17.5});
   Map gameMap(offset);
 
   std::vector<std::shared_ptr<Tile>> tiles = gameMap.GetTiles();
@@ -118,7 +151,7 @@ int App()
   player->m_nextTile = player->m_startingTile;
   player->m_tryNextTile = player->m_nextTile;
 
-  player->tiles = tiles;
+  player->m_tiles = tiles;
   player->SetStartingTiles(gameMap.GetStartingTile());
   gameScene.AddEntity(player);
 
@@ -145,7 +178,7 @@ int App()
     enemy->m_transform->position.x = enemy->m_tileTransform->position.x + enemy->m_centerOffset;
     enemy->m_transform->position.y = enemy->m_tileTransform->position.y + enemy->m_centerOffset;
 
-    enemy->tiles = tiles;
+    enemy->m_tiles = tiles;
     enemy->m_direction = Direction::Up;
 
     enemy->SetStartingTiles(gameMap.GetGhostTile());
@@ -172,7 +205,7 @@ int App()
     switch (manager.GetGameState())
     {
       case GameState::MainMenu:
-        MainMenu(menuScene, window);
+        MenuMain(menuScene, window);
         break;
         //scene = menuScene;
       case GameState::GameLoop:
@@ -196,16 +229,17 @@ int App()
   }
 }
 
-void MainMenu(Scene& menuScene, sf::RenderWindow& window)
+
+void MenuMain(Scene& menuScene, sf::RenderWindow& window)
 {
-  //UpdateScene(menuScene);
+  UpdateScene(menuScene);
   RenderScene(menuScene, window);
 }
 void GameLoop(std::shared_ptr<Pac>& player, std::vector<std::shared_ptr<Ghost>>& enemiesArray, Scene& gameScene, Map& gameMap, sf::RenderWindow& window, GameManager& manager, const std::vector<std::shared_ptr<Tile>>& tiles)
 {
   //MovePlayer(playerIsMoving, player->m_tryNextTile, player->m_nextTile, playerDirection, tileTransformWeak, tileTransform, playerTransform, tiles, speed, centerOffset);
   //MoveEnemy(enemiesArray, tiles, speed, centerOffset);
-  UpdateScene(gameScene, tiles);
+  UpdateScene(gameScene);
   gameMap.Render(window);
   RenderScene(gameScene, window);
 
@@ -246,11 +280,11 @@ void GameOver()
 
 }
 
-void UpdateScene(Scene& scene, const std::vector<std::shared_ptr<Tile>>& tiles)
+void UpdateScene(Scene& scene)
 {
   for (const auto& entity : scene.GetEntities())
   {
-    entity->Update(tiles);
+    entity->Update();
   }
 }
 void RenderScene(const Scene& scene, sf::RenderWindow& window)
@@ -289,132 +323,12 @@ void DrawBounds(sf::RenderWindow& window, const sf::FloatRect& bounds, const sf:
   window.draw(rectangle);
 }
 
-//int GetRandomNumber(int min, int max)
-//{
-//  static std::random_device rd;
-//  static std::mt19937 gen(rd());
-//  std::uniform_int_distribution<> dis(min, max);
-//  return dis(gen);
-//}
-//void MoveEnemy(std::vector<std::shared_ptr<Ghost>>& enemiesArray, const std::vector<std::shared_ptr<Tile>>& tiles, float& speed, int centerOffset)
-//{
-//  for each(std::shared_ptr<Ghost> enemy in enemiesArray)
-//  {
-//    if (!enemy->enemyIsMoving)
-//    {
-//      enemy->m_tryNextTile = enemy->m_nextTile;
-//      int randomValue = GetRandomNumber(0, 17);
-//      switch (randomValue)
-//      {
-//      case 0:
-//        enemy->m_tryNextTile.x--;
-//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-//        {
-//          enemy->enemyDirection = Direction::Left;
-//        }
-//        break;
-//      case 1:
-//        enemy->m_tryNextTile.x++;
-//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-//        {
-//          enemy->enemyDirection = Direction::Right;
-//        }
-//        break;
-//      case 2:
-//        enemy->m_tryNextTile.y--;
-//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-//        {
-//          enemy->enemyDirection = Direction::Up;
-//        }
-//        break;
-//      case 3:
-//        enemy->m_tryNextTile.y++;
-//        if (CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform))
-//        {
-//          enemy->enemyDirection = Direction::Down;
-//        }
-//        break;
-//      default:
-//        break;
-//      }
-//
-//      enemy->m_tryNextTile = enemy->m_nextTile;
-//
-//      switch (enemy->enemyDirection)
-//      {
-//      case Direction::Left:
-//        enemy->m_tryNextTile.x--;
-//        break;
-//      case Direction::Right:
-//        enemy->m_tryNextTile.x++;
-//        break;
-//      case Direction::Up:
-//        enemy->m_tryNextTile.y--;
-//        break;
-//      case Direction::Down:
-//        enemy->m_tryNextTile.y++;
-//        break;
-//      default:
-//        break;
-//      }
-//
-//      bool checkAdvance = CheckNextTile(false, enemy->m_tryNextTile, tiles, enemy->ghostTileTransformWeak, enemy->ghostTileTransform);
-//      if (checkAdvance)
-//      {
-//        enemy->enemyIsMoving = true;
-//        enemy->m_nextTile = enemy->m_tryNextTile;
-//      }
-//    }
-//
-//    if (enemy->enemyIsMoving)
-//    {
-//      switch (enemy->enemyDirection)
-//      {
-//      case Direction::Left:
-//        enemy->enemyTransform->position.x -= speed;
-//        if (static_cast<int>(enemy->enemyTransform->position.x) <= enemy->ghostTileTransform->position.x + centerOffset)
-//        {
-//          enemy->enemyTransform->position.x = enemy->ghostTileTransform->position.x + centerOffset;
-//          enemy->enemyIsMoving = false;
-//        }
-//        break;
-//      case Direction::Right:
-//        enemy->enemyTransform->position.x += speed;
-//        if (static_cast<int>(enemy->enemyTransform->position.x) >= enemy->ghostTileTransform->position.x + centerOffset)
-//        {
-//          enemy->enemyTransform->position.x = enemy->ghostTileTransform->position.x + centerOffset;
-//          enemy->enemyIsMoving = false;
-//        }
-//        break;
-//      case Direction::Up:
-//        enemy->enemyTransform->position.y -= speed;
-//        if (static_cast<int>(enemy->enemyTransform->position.y) <= enemy->ghostTileTransform->position.y + centerOffset)
-//        {
-//          enemy->enemyTransform->position.y = enemy->ghostTileTransform->position.y + centerOffset;
-//          enemy->enemyIsMoving = false;
-//        }
-//        break;
-//      case Direction::Down:
-//        enemy->enemyTransform->position.y += speed;
-//        if (static_cast<int>(enemy->enemyTransform->position.y) >= enemy->ghostTileTransform->position.y + centerOffset)
-//        {
-//          enemy->enemyTransform->position.y = enemy->ghostTileTransform->position.y + centerOffset;
-//          enemy->enemyIsMoving = false;
-//        }
-//        break;
-//      default:
-//        break;
-//      }
-//    }
-//  }
-//}
-
 void Respawn(std::shared_ptr <Pac> player, std::vector<std::shared_ptr<Ghost>>& enemiesArray)
 {
   player->m_nextTile = player->m_startingTile;
   player->m_tryNextTile = player->m_nextTile;
 
-  player->m_tileTransformWeak = player->tiles[player->m_startingTile.index]->GetComponent<Transform>();
+  player->m_tileTransformWeak = player->m_tiles[player->m_startingTile.index]->GetComponent<Transform>();
   player->m_tileTransform = player->m_tileTransformWeak.lock();
 
   player->m_transform->position.x = player->m_tileTransform->position.x + player->m_centerOffset;
@@ -427,59 +341,67 @@ void Respawn(std::shared_ptr <Pac> player, std::vector<std::shared_ptr<Ghost>>& 
     enemy->m_nextTile = enemy->m_startingTile;
     enemy->m_tryNextTile = enemy->m_nextTile;
 
-    enemy->m_tileTransformWeak = player->tiles[enemy->m_startingTile.index]->GetComponent<Transform>();
+    enemy->m_tileTransformWeak = enemy->m_tiles[enemy->m_startingTile.index]->GetComponent<Transform>();
     enemy->m_tileTransform = enemy->m_tileTransformWeak.lock();
 
-    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + player->m_centerOffset;
-    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + player->m_centerOffset;
+    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + enemy->m_centerOffset;
+    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + enemy->m_centerOffset;
 
     enemy->m_direction = Direction::Up;
   }
 
 }
-//void LoadMods(const Scene& scene, const Entity* player)
+//void loadMods(const Scene& scene, Entity* player)
 //{
 //  std::filesystem::path modPath(ASSETS_PATH + "mods/");
 //  if (!std::filesystem::exists(modPath))
 //  {
-//    std::cout << "No Mods Founds" << "\n";
+//    std::cout << "No mods found" << std::endl;
 //    return;
 //  }
-//  for (auto const& dir_entry : std::filesystem::directory_iterator(modPath))
+//  for (auto const& dir_entry : std::filesystem::directory_iterator{ modPath })
 //  {
 //    std::filesystem::path filePath = dir_entry.path();
 //    if (filePath.extension() == ".dll" || filePath.extension() == ".so")
 //    {
 //      std::string modName = filePath.stem().string();
-//      std::cout << "loading mods: " << << "\n";
+//      std::cout << "Loading mod: " << modName << std::endl;
 //
-//      void* handlke = dlopen(modName.c_str(), RTLD_LAZY);
+//      HMODULE handle = LoadLibrary(filePath.string().c_str());
 //      if (nullptr == handle)
 //      {
-//        std::cerr << "Cannot open library: " << dlerror() << "\n";
+//        std::cerr << "Cannot open library: " << GetLastError() << std::endl;
 //        continue;
 //      }
 //
-//      LoadModFunc loadMod = reinterpret_cast<LoadModFunc>(dlsym(handle));
+//      LoadModFunc loadMod = reinterpret_cast<LoadModFunc>(GetProcAddress(handle, "loadMod"));
 //      if (nullptr == loadMod)
 //      {
-//        std::cerr << "Cannot load symbol print_dllRuntime: " << dlerror() << "\n";
-//        dlclose(handle);
+//        std::cerr << "Cannot load symbol print_dllRuntime: " << GetLastError() << std::endl;
+//        FreeLibrary(handle);
 //        continue;
 //      }
 //
 //      try
 //      {
-//        loadMod();
+//        ComponentScript componentScript = loadMod();
+//        if (componentScript)
+//        {
+//          std::cout << "Mod loaded successfully" << std::endl;
+//          player->AddComponent<ScriptComponent>(componentScript);
+//        }
+//        else
+//        {
+//          std::cerr << "Failed to load mod" << std::endl;
+//        }
 //      }
 //      catch (std::exception& e)
 //      {
-//        std::cerr << "Error Loading mod: " << e.what() << "\n";
+//        std::cerr << "Error loading mod: " << e.what() << std::endl;
 //
-//        dlclose(handle);
+//        FreeLibrary(handle);
 //        continue;
 //      }
-//      dlclose(handle);
 //    }
 //  }
 //}

@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Entity.h"
+#include "GameEntity.h"
 
-class Ghost : public Entity
+class Ghost : public GameEntity
 {
 public:
   Ghost() = default;

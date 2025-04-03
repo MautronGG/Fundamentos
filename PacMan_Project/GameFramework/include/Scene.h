@@ -13,8 +13,8 @@ public:
 
   void AddEntity(std::shared_ptr<Entity> entity);
 
-  inline const std::vector<std::shared_ptr<Entity>>& 
-    GetEntities() const { 
+  inline const std::vector<std::shared_ptr<Entity>>& GetEntities() const 
+  { 
     return m_entities; 
   }
 

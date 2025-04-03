@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Entity.h"
+#include "GameEntity.h"
 
-class Pac : public Entity
+class Pac : public GameEntity
 {
 public:
   Pac();

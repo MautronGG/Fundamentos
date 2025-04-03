@@ -1,8 +1,8 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
 #include "Entity.h"
 #include "TransformComponent.h"
+
 struct Vector3;
 
 class Tile : public Entity

@@ -5,6 +5,7 @@
 
 #include <SFML/Graphics.hpp>
 #include "Tile.h"
+#include "Entity.h"
 
 class Tile;
 

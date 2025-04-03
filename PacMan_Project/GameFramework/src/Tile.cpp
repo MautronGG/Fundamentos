@@ -3,13 +3,14 @@
 Tile::Tile(int type, float x, float y, int tileSize, const sf::Vector2f& offset, const int index)
   : m_tileInfo({ type, index, x, y })
 {
+  m_shape.setSize(sf::Vector2f(tileSize, tileSize));
+  m_shape.setOrigin(m_shape.getGlobalBounds().getCenter());
   std::weak_ptr<Transform> tileTransformWeak = this->GetComponent<Transform>();
   std::shared_ptr<Transform> tileTransform = tileTransformWeak.lock();
 
   tileTransform->position.x = (x * tileSize) + offset.x;
   tileTransform->position.y = (y * tileSize) + offset.y;
 
-  m_shape.setSize(sf::Vector2f(tileSize, tileSize));
   SetShape();
 }
 void Tile::Render(sf::RenderWindow& window)

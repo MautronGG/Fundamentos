@@ -17,7 +17,7 @@ void Pac::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::A))
     {
       m_tryNextTile.x--;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Left;
         //checkAdvance = true;
@@ -26,7 +26,7 @@ void Pac::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::D))
     {
       m_tryNextTile.x++;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Right;
         //checkAdvance = true;
@@ -35,7 +35,7 @@ void Pac::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::W))
     {
       m_tryNextTile.y--;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Up;
         //checkAdvance = true;
@@ -44,7 +44,7 @@ void Pac::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::S))
     {
       m_tryNextTile.y++;
-      if (CheckNextTile(tiles, m_tryNextTile))
+      if (CheckNextTile(m_tryNextTile))
       {
         m_direction = Direction::Down;
         //checkAdvance = true;
@@ -56,21 +56,25 @@ void Pac::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
     {
     case Direction::Left:
       m_tryNextTile.x--;
+      m_transform->rotation = 180;
       break;
     case Direction::Right:
       m_tryNextTile.x++;
+      m_transform->rotation = 0;
       break;
     case Direction::Up:
       m_tryNextTile.y--;
+      m_transform->rotation = -90;
       break;
     case Direction::Down:
       m_tryNextTile.y++;
+      m_transform->rotation = 90;
       break;
     default:
       break;
     }
 
-    bool checkAdvance = CheckNextTile(tiles, m_tryNextTile);
+    bool checkAdvance = CheckNextTile(m_tryNextTile);
     if (checkAdvance)
     {
       m_isMoving = true;

@@ -5,9 +5,12 @@ add_library(GameFramework STATIC
     src/TransformComponent.cpp 
     src/Map.cpp 
     src/Tile.cpp 
+    src/GameEntity.cpp
     src/Ghost.cpp 
-    #src/GameManager.cpp 
     src/Pac.cpp
+    src/UIEntity.cpp 
+    src/MainMenu.cpp    
+    #src/ScriptComponent.cpp
 )
 
 target_include_directories(GameFramework PUBLIC
@@ -21,3 +24,5 @@ target_link_libraries(GameFramework PUBLIC
 target_compile_features(GameFramework PRIVATE
     ${COMMON_COMPILE_FEATURES}
 )
+
+#set(CMAKE_POSITION_INDEPENDENT_CODE ON)
