@@ -1,7 +1,12 @@
 #pragma once
 
-#include "Vector2.h"
 #include "Component.h"
+
+struct Vector2
+{
+  float x = 0.0f;
+  float y = 0.0f;
+};
 
 class Transform : public Component
 {

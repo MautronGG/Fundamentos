@@ -10,7 +10,7 @@ add_library(GameFramework STATIC
     src/Pac.cpp
     src/UIEntity.cpp 
     src/MainMenu.cpp    
-    src/ScriptComponent.cpp
+    #src/ScriptComponent.cpp
 )
 
 target_include_directories(GameFramework PUBLIC

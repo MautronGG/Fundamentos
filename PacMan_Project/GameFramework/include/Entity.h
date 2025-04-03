@@ -3,7 +3,6 @@
 #include <vector>
 #include <memory>
 #include <SFML/Graphics.hpp>
-#include "Vector2.h"
 
 class Component;
 class Transform;
@@ -27,7 +26,6 @@ public:
 
   template <typename T>
   std::weak_ptr<T> GetComponent() const;
-  const Vector2& Entity::GetPosition() const;
 
   virtual void Update(/*DeltaTime*/);
   

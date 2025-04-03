@@ -145,11 +145,3 @@ C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-
 C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GameFramework/CMakeFiles/list_install_components.dir
 C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GameFramework/CMakeFiles/install.dir
 C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GameFramework/CMakeFiles/install/local.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/GraphicMod.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/package.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/package_source.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/edit_cache.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/rebuild_cache.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/list_install_components.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/install.dir
-C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/GraphicMod/CMakeFiles/install/local.dir

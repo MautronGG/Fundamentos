@@ -2,7 +2,6 @@
 #include "Entity.h"
 #include "TransformComponent.h"
 #include "Tile.h"
-#include "Vector2.h"
 
 Entity::Entity()
 {
@@ -15,14 +14,5 @@ void Entity::Update(/*DeltaTime*/)
   {
     component->Update(this/*DeltaTime*/);
   }
-}
-const Vector2& Entity::GetPosition() const
-{
-  std::weak_ptr<Transform> transformWeak = GetComponent<Transform>();
-  if (std::shared_ptr<Transform> transform = transformWeak.lock())
-  {
-    return transform->position;
-  }
-  return Vector2();
 }
 
