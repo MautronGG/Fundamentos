@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <memory>
 #include <optional>
-//#include <windows.h>
+#include <windows.h>
 //#include <string>
 #include <filesystem>
 //#include <dlfcn.h>
@@ -15,7 +15,7 @@
 #include "Ghost.h"
 #include "GraphicsComponent.h"
 #include "TransformComponent.h"
-//#include "ScriptComponent.h"
+#include "ScriptComponent.h"
 #include "Map.h"
 #include "GameManager.h"
 
@@ -23,7 +23,7 @@ const std::string ASSETS_PATH = "C:/Users/mauig/Desktop/Docs pochos/c++/Fundamen
 
 typedef void (*ComponentScript)(const Entity* parent);
 typedef ComponentScript(*LoadModFunc)(); 
-//void loadMods(const Scene& scene, Entity* player);
+void loadMods(const Scene& scene, Entity* player);
 
 enum class Direction;
 struct Vector3;
@@ -187,6 +187,7 @@ int App()
   }
 
   GameManager& manager = GameManager::instance();
+  loadMods(gameScene, player.get());
   //Scene scene;
 
   while (window.isOpen())
@@ -351,57 +352,57 @@ void Respawn(std::shared_ptr <Pac> player, std::vector<std::shared_ptr<Ghost>>& 
   }
 
 }
-//void loadMods(const Scene& scene, Entity* player)
-//{
-//  std::filesystem::path modPath(ASSETS_PATH + "mods/");
-//  if (!std::filesystem::exists(modPath))
-//  {
-//    std::cout << "No mods found" << std::endl;
-//    return;
-//  }
-//  for (auto const& dir_entry : std::filesystem::directory_iterator{ modPath })
-//  {
-//    std::filesystem::path filePath = dir_entry.path();
-//    if (filePath.extension() == ".dll" || filePath.extension() == ".so")
-//    {
-//      std::string modName = filePath.stem().string();
-//      std::cout << "Loading mod: " << modName << std::endl;
-//
-//      HMODULE handle = LoadLibrary(filePath.string().c_str());
-//      if (nullptr == handle)
-//      {
-//        std::cerr << "Cannot open library: " << GetLastError() << std::endl;
-//        continue;
-//      }
-//
-//      LoadModFunc loadMod = reinterpret_cast<LoadModFunc>(GetProcAddress(handle, "loadMod"));
-//      if (nullptr == loadMod)
-//      {
-//        std::cerr << "Cannot load symbol print_dllRuntime: " << GetLastError() << std::endl;
-//        FreeLibrary(handle);
-//        continue;
-//      }
-//
-//      try
-//      {
-//        ComponentScript componentScript = loadMod();
-//        if (componentScript)
-//        {
-//          std::cout << "Mod loaded successfully" << std::endl;
-//          player->AddComponent<ScriptComponent>(componentScript);
-//        }
-//        else
-//        {
-//          std::cerr << "Failed to load mod" << std::endl;
-//        }
-//      }
-//      catch (std::exception& e)
-//      {
-//        std::cerr << "Error loading mod: " << e.what() << std::endl;
-//
-//        FreeLibrary(handle);
-//        continue;
-//      }
-//    }
-//  }
-//}
+void loadMods(const Scene& scene, Entity* player)
+{
+  std::filesystem::path modPath(ASSETS_PATH + "mods/");
+  if (!std::filesystem::exists(modPath))
+  {
+    std::cout << "No mods found" << std::endl;
+    return;
+  }
+  for (auto const& dir_entry : std::filesystem::directory_iterator{ modPath })
+  {
+    std::filesystem::path filePath = dir_entry.path();
+    if (filePath.extension() == ".dll" || filePath.extension() == ".so")
+    {
+      std::string modName = filePath.stem().string();
+      std::cout << "Loading mod: " << modName << std::endl;
+
+      HMODULE handle = LoadLibrary(filePath.string().c_str());
+      if (nullptr == handle)
+      {
+        std::cerr << "Cannot open library: " << GetLastError() << std::endl;
+        continue;
+      }
+
+      LoadModFunc loadMod = reinterpret_cast<LoadModFunc>(GetProcAddress(handle, "loadMod"));
+      if (nullptr == loadMod)
+      {
+        std::cerr << "Cannot load symbol print_dllRuntime: " << GetLastError() << std::endl;
+        FreeLibrary(handle);
+        continue;
+      }
+
+      try
+      {
+        ComponentScript componentScript = loadMod();
+        if (componentScript)
+        {
+          std::cout << "Mod loaded successfully" << std::endl;
+          player->AddComponent<ScriptComponent>(componentScript);
+        }
+        else
+        {
+          std::cerr << "Failed to load mod" << std::endl;
+        }
+      }
+      catch (std::exception& e)
+      {
+        std::cerr << "Error loading mod: " << e.what() << std::endl;
+
+        FreeLibrary(handle);
+        continue;
+      }
+    }
+  }
+}

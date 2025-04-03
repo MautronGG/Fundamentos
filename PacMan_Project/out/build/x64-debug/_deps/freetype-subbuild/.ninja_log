@@ -1,37 +1,21 @@
 # ninja log v6
-3	70	7653419730128164	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-mkdir	fc2e610e98a81659
-71	9276	7653419822058819	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-download	23953f41215f9785
-26	193	7653423361620709	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update	98cc2e0d041b9924
-194	261	7653423363914540	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch	376e185916682e20
-443	496	7653423366250237	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test	d3d8b1eaf5bf4234
-3	70	7653419730128164	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-mkdir	fc2e610e98a81659
-315	364	7653423364942819	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build	5a5703343e30fb96
-26	193	7653423361620709	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update	98cc2e0d041b9924
-71	9276	7653419822058819	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-download	23953f41215f9785
-194	261	7653423363914540	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch	376e185916682e20
-261	314	7653423364449267	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure	84f613b44070d1d0
-261	314	7653423364449267	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure	84f613b44070d1d0
-315	364	7653423364942819	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build	5a5703343e30fb96
-364	442	7653423365706562	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install	3ddbe8030f194105
-364	442	7653423365706562	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install	3ddbe8030f194105
-443	496	7653423366250237	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test	d3d8b1eaf5bf4234
-496	577	7653423367062338	CMakeFiles/freetype-populate-complete	1a2eb312d447577e
-496	577	7653423367062338	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-done	1a2eb312d447577e
-496	577	7653423367062338	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-done	1a2eb312d447577e
-496	577	7653423367062338	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate-complete	1a2eb312d447577e
-18	167	7653423923292243	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update	98cc2e0d041b9924
-18	167	7653423923292243	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update	98cc2e0d041b9924
-167	228	7653423925332895	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch	376e185916682e20
-167	228	7653423925332895	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch	376e185916682e20
-228	280	7653423925858787	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure	84f613b44070d1d0
-228	280	7653423925858787	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure	84f613b44070d1d0
-281	344	7653423926492677	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build	5a5703343e30fb96
-281	344	7653423926492677	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build	5a5703343e30fb96
-344	395	7653423926999965	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install	3ddbe8030f194105
-344	395	7653423926999965	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install	3ddbe8030f194105
-395	448	7653423927534894	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test	d3d8b1eaf5bf4234
-395	448	7653423927534894	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test	d3d8b1eaf5bf4234
-448	528	7653423928346668	CMakeFiles/freetype-populate-complete	1a2eb312d447577e
-448	528	7653423928346668	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-done	1a2eb312d447577e
-448	528	7653423928346668	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate-complete	1a2eb312d447577e
-448	528	7653423928346668	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-done	1a2eb312d447577e
+6	85	7653462686993849	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-mkdir	fc2e610e98a81659
+6	85	7653462686993849	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-mkdir	fc2e610e98a81659
+86	9123	7653462777368191	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-download	23953f41215f9785
+86	9123	7653462777368191	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-download	23953f41215f9785
+9124	9253	7653462777445344	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update	98cc2e0d041b9924
+9124	9253	7653462777445344	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-update	98cc2e0d041b9924
+9254	9350	7653462779649049	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch	376e185916682e20
+9254	9350	7653462779649049	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-patch	376e185916682e20
+9351	9419	7653462780334388	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure	84f613b44070d1d0
+9351	9419	7653462780334388	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-configure	84f613b44070d1d0
+9419	9485	7653462780984320	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build	5a5703343e30fb96
+9419	9485	7653462780984320	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-build	5a5703343e30fb96
+9485	9542	7653462781580394	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install	3ddbe8030f194105
+9485	9542	7653462781580394	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-install	3ddbe8030f194105
+9543	9614	7653462782270554	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test	d3d8b1eaf5bf4234
+9543	9614	7653462782270554	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-test	d3d8b1eaf5bf4234
+9614	9696	7653462783106634	CMakeFiles/freetype-populate-complete	1a2eb312d447577e
+9614	9696	7653462783106634	freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-done	1a2eb312d447577e
+9614	9696	7653462783106634	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/CMakeFiles/freetype-populate-complete	1a2eb312d447577e
+9614	9696	7653462783106634	C:/Users/mauig/Desktop/Docs pochos/c++/Fundamentos/PacMan_Project/out/build/x64-debug/_deps/freetype-subbuild/freetype-populate-prefix/src/freetype-populate-stamp/freetype-populate-done	1a2eb312d447577e
