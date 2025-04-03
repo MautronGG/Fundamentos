@@ -15,6 +15,7 @@ void GraphicsComponent::Update(const Entity* parent/*DeltaTime*/)
     std::weak_ptr<Transform> transformWeak = parent->GetComponent<Transform>();
     if (auto transform = transformWeak.lock())
     {
+      const Vector2& position = parent->GetPosition();
       sf::Vector2f newPosition(transform->position.x, transform->position.y);
       m_sprite.setPosition(newPosition);
 
