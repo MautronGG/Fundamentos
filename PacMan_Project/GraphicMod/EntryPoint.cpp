@@ -20,7 +20,7 @@
 
 typedef void (*ComponentScript)(const Entity* parent);
 
-extern "C" DYNAMIC_LIBRARY_API ComponentScript loadMod()
+extern "C" DYNAMIC_LIBRARY_API ComponentScript LoadMod()
 {
   std::cout << "Loading mod" << std::endl;
 

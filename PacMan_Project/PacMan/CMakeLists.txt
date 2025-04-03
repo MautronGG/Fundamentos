@@ -8,5 +8,5 @@ target_include_directories(PacMan_exe PRIVATE
 )
 
 target_compile_features(PacMan_exe PRIVATE ${COMMON_COMPILE_FEATURES})
-target_link_libraries(PacMan_exe PRIVATE GameFramework)
+target_link_libraries(PacMan_exe PRIVATE GameFramework SFML::Graphics)
 #set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -rdynamic")

@@ -26,6 +26,13 @@
 *.a
 *.lib
 
+# Exlude any .vs directory
+.vs/
+
+## Exclude any out directory
+out/
+
+
 # Executables
 *.exe
 *.out

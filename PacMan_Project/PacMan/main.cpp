@@ -21,7 +21,7 @@ const std::string ASSETS_PATH = "C:/Users/mauig/Desktop/Docs pochos/c++/Fundamen
 
 typedef void (*ComponentScript)(const Entity* parent);
 typedef ComponentScript(*LoadModFunc)(); 
-void loadMods(const Scene& scene, Entity* player);
+void LoadMods(const Scene& scene, Entity* player);
 
 enum class Direction;
 struct Vector3;
@@ -349,7 +349,7 @@ void Respawn(std::shared_ptr <Pac> player, std::vector<std::shared_ptr<Ghost>>& 
   }
 
 }
-void loadMods(const Scene& scene, Entity* player)
+void LoadMods(const Scene& scene, Entity* player)
 {
   std::filesystem::path modPath(ASSETS_PATH + "mods/");
   if (!std::filesystem::exists(modPath))
