@@ -18,10 +18,9 @@ void Entity::Update(/*DeltaTime*/)
 }
 const Vector2& Entity::GetPosition() const
 {
-  std::weak_ptr<Transform> transformWeak = GetComponent<Transform>();
-  if (std::shared_ptr<Transform> transform = transformWeak.lock())
+  if (m_transform == m_transformWeak.lock())
   {
-    return transform->position;
+    return m_transform->position;
   }
   return Vector2();
 }

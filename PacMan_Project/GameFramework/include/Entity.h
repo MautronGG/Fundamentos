@@ -27,7 +27,7 @@ public:
 
   template <typename T>
   std::weak_ptr<T> GetComponent() const;
-  const Vector2& Entity::GetPosition() const;
+  const Vector2& GetPosition() const;
 
   virtual void Update(/*DeltaTime*/);
   

@@ -129,3 +129,17 @@ void Ghost::Move(const std::vector<std::shared_ptr<Tile>>& tiles)
     }
   }
 }
+void Ghost::Reset(const Map& gameMap, const std::vector<std::shared_ptr<Tile>>& tiles, bool isNewGame)
+{
+  m_startingTile = gameMap.GetGhostTile();
+  m_nextTile = m_startingTile;
+  m_tryNextTile = m_nextTile;
+
+  m_tileTransformWeak = m_tiles[m_startingTile.index]->GetComponent<Transform>();
+  m_tileTransform = m_tileTransformWeak.lock();
+
+  m_transform->position.x = m_tileTransform->position.x + m_centerOffset;
+  m_transform->position.y = m_tileTransform->position.y + m_centerOffset;
+
+  m_direction = Direction::Up;
+}

@@ -1,6 +1,6 @@
 #pragma once
 
-enum class GameState { MainMenu, GameLoop, PauseMenu, GameOver };
+enum class GameState { MainMenu, GameLoop, PauseMenu, GameOver, Exit, Restart, Save, Load };
 
 class GameManager
 {
@@ -22,5 +22,5 @@ public:
   }
 private:
   GameManager() {}
-  GameState m_gameState = GameState::GameLoop;
+  GameState m_gameState = GameState::MainMenu;
 };

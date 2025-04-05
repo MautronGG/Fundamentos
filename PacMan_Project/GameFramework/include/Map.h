@@ -19,10 +19,11 @@ public:
 
   void Update();
   void Render(sf::RenderWindow& window);
+  void Reset(sf::Vector2f offset);
 
   inline const std::vector<std::shared_ptr<Tile>>& GetTiles() const
   {
-    return tiles;
+    return m_gameTiles;
   }
   inline const Vector3& GetStartingTile() const
   {
@@ -37,6 +38,7 @@ public:
     return tileSize;
   }
   void ReadMap(const std::string& filename);
+  void SaveMap();
 
 private:
   //0=Wall
@@ -48,7 +50,7 @@ private:
 
   static std::array<int, 28 * 31> levelLayout;
   static constexpr int tileSize = 35;
-  std::vector<std::shared_ptr<Tile>> tiles;
+  std::vector<std::shared_ptr<Tile>> m_gameTiles;
   sf::RectangleShape m_shape;
   Vector3 m_playerStartingTile;
   Vector3 m_ghostStartingTile;

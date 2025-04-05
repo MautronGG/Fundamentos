@@ -19,4 +19,4 @@ SET(COMMON_COMPILE_FEATURES cxx_std_17)
 
 add_subdirectory(PacMan)
 add_subdirectory(GameFramework)
-add_subdirectory(GraphicMod)
+#add_subdirectory(GraphicMod)

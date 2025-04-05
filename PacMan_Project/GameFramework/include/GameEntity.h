@@ -5,6 +5,7 @@
 
 #include "Entity.h"
 #include "Tile.h"
+#include "Map.h"
 
 struct Vector3;
 
@@ -14,8 +15,9 @@ class GameEntity : public Entity
 {
 public:
   virtual void Move(const std::vector<std::shared_ptr<Tile>>& tiles) {}
-  bool CheckNextTile(Vector3& nexTile);
+  virtual bool CheckNextTile(Vector3& nexTile);
   void SetStartingTiles(Vector3 start);
+  virtual void Reset(const Map& gameMap, const std::vector<std::shared_ptr<Tile>>& tiles, bool isNewGame) {}
 
   void Update(/*DeltaTime*/) override;
   

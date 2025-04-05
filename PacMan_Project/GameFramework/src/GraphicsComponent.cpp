@@ -24,3 +24,7 @@ void GraphicsComponent::Update(const Entity* parent/*DeltaTime*/)
     }
   }
 }
+void GraphicsComponent::SetTexture(const sf::Texture& texture)
+{
+  m_sprite.setTexture(texture);
+}

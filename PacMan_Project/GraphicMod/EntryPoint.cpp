@@ -1,6 +1,7 @@
 #include <iostream>
-
 #include "Entity.h"
+
+class GraphicsComponent;
 
 #ifdef __linux__
 
@@ -16,19 +17,26 @@
 
 #endif // __linux__
 
-
-
 typedef void (*ComponentScript)(const Entity* parent);
 
-extern "C" DYNAMIC_LIBRARY_API ComponentScript LoadMod()
+extern "C" DYNAMIC_LIBRARY_API ComponentScript loadMod()
 {
   std::cout << "Loading mod" << std::endl;
 
   static ComponentScript componentScript = [](const Entity* parent)
     {
-      std::cout << "Entity position: "
-        << parent->GetPosition().x << ", "
-        << parent->GetPosition().y << std::endl;
+      //std::weak_ptr<GraphicsComponent> graphicsWeak = parent->GetComponent<GraphicsComponent>();
+      //std::shared_ptr<GraphicsComponent> graphics = graphicsWeak.lock();
+      //if (graphics) 
+      //{
+      //  sf::Texture newTexture;
+      //  if (!newTexture.loadFromFile("../../../../Assets/ghost35.png"))
+      //  {
+      //    std::cerr << "Failed to load pacMan.png" << std::endl;
+      //    return;
+      //  }
+      //  graphics->SetTexture(newTexture);
+      //}
     };
 
   return componentScript;

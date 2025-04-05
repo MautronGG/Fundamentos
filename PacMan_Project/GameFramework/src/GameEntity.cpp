@@ -24,21 +24,6 @@ bool GameEntity::CheckNextTile(Vector3& nexTile)
 
   if (nexTile.index >= 0 && nexTile.index < static_cast<int>(m_tiles.size()) && nexTile.type != 0)
   {
-    if (m_isPlayer)
-    {
-      if (nexTile.type != 4)
-      {
-        if (nexTile.type == 2 || nexTile.type == 3)
-        {
-          m_tiles[nexTile.index]->SetType(1);
-        }
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    }
     return true;
   }
   else

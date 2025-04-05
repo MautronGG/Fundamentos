@@ -10,4 +10,5 @@ public:
 
   void Move(const std::vector<std::shared_ptr<Tile>>& tiles) override;
   int GetRandomNumber(int min, int max);
+  void Reset(const Map& gameMap, const std::vector<std::shared_ptr<Tile>>& tiles, bool isNewGame) override;
 };
