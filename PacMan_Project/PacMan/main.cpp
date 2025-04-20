@@ -129,10 +129,18 @@ int App()
 
   menuScene.AddEntity(menu);
 
-  for each(std::shared_ptr<UIEntity> entity in menu->m_buttonArray)
-    {
-      menuScene.AddEntity(entity);
-    }
+  // Supongo que dejaste esto como pseudocódigo
+
+  // for each(std::shared_ptr<UIEntity> entity in menu->m_buttonArray)
+  //   {
+  //     menuScene.AddEntity(entity);
+  //   }
+
+  // Codigo real debería
+  for (auto& entity : menu->m_buttonArray)
+  {
+    menuScene.AddEntity(entity);
+  }
 
   //GameScene
   sf::Texture pacManTexture;
@@ -270,7 +278,15 @@ int App()
 
   pauseScene.AddEntity(pause);
 
-  for each(std::shared_ptr<UIEntity> entity in pause->m_buttonArray)
+
+  // Supongo que dejaste esto como pseudocódigo
+  // for each(std::shared_ptr<UIEntity> entity in pause->m_buttonArray)
+  // {
+  //   pauseScene.AddEntity(entity);
+  // }
+
+  // Codigo real debería
+  for (auto& entity : pause->m_buttonArray)
   {
     pauseScene.AddEntity(entity);
   }
@@ -300,7 +316,14 @@ int App()
 
   gameOverScene.AddEntity(gameOver);
 
-  for each(std::shared_ptr<UIEntity> entity in gameOver->m_buttonArray)
+  // Supongo que dejaste esto como pseudocódigo
+  // for each(std::shared_ptr<UIEntity> entity in gameOver->m_buttonArray)
+  // {
+  //   gameOverScene.AddEntity(entity);
+  // }
+
+  // Codigo real debería
+  for (auto& entity : gameOver->m_buttonArray)
   {
     gameOverScene.AddEntity(entity);
   }
@@ -356,6 +379,9 @@ int App()
     }
     window.display();
   }
+
+  // No estabas regresando valor en esta funcion
+  return 0;
 }
 
 
@@ -388,7 +414,11 @@ void GameLoop(std::shared_ptr<Pac>& player, std::vector<std::shared_ptr<Ghost>>&
   //}
   sf::FloatRect playerBounds = player->GetComponent<GraphicsComponent>().lock()->GetBounds();
 
-  for each(std::shared_ptr<Ghost> enemy in enemiesArray)
+  //Aqui lo mismo, supongo que era pseudocódigo
+  //for each(std::shared_ptr<Ghost> enemy in enemiesArray)
+
+  //real code
+  for (auto& enemy : enemiesArray)
   {
     sf::FloatRect enemyBounds = enemy->GetComponent<GraphicsComponent>().lock()->GetBounds();
     DrawBounds(window, enemyBounds, sf::Color::Red);
@@ -491,7 +521,9 @@ void Respawn(std::shared_ptr <Pac>& player, std::vector<std::shared_ptr<Ghost>>&
 
   player->m_direction = Direction::Right;
 
-  for each(std::shared_ptr<Ghost> enemy in enemiesArray)
+  //for each(std::shared_ptr<Ghost> enemy in enemiesArray)
+  //real code
+  for (auto enemy: enemiesArray)
   {
     enemy->m_nextTile = enemy->m_startingTile;
     enemy->m_tryNextTile = enemy->m_nextTile;

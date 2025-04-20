@@ -22,6 +22,8 @@ const Vector2& Entity::GetPosition() const
   {
     return m_transform->position;
   }
-  return Vector2();
+  // Regreso una versión estática de un Vector2 para evitar mover una copia del objeto
+  // en teoría nunca debería llegar aquí, pero es mejor prevenir que lamentar
+  return Vector2::ZERO;
 }
 

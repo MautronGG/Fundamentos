@@ -18,8 +18,15 @@ public:
   {
     return m_shape;
   }
-  inline const sf::FloatRect& GetBounds() const
+
+  //Por ahora quité el & porque no lo necesitas
+  inline const sf::FloatRect GetBounds() const
   {
+    // getGlobalBounds() es una copia, sin emargo lo regresas como refrencia, lo que causa
+    // que al salir de esta función en teoría se destruye el objeto
+    // por lo que no puedes usarlo fuera de esta función.
+
+    // Para solucionarlo puedes regresar una copia, sf::FloatRect sin el & o guardar una copia local y regresarla./
     return GetShape().getGlobalBounds();
   }
   inline const Vector3 GetInfo() const

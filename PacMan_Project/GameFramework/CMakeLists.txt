@@ -11,6 +11,7 @@ add_library(GameFramework STATIC
     src/UIEntity.cpp 
     src/MainMenu.cpp    
     src/ScriptComponent.cpp
+    src/Vector2.cpp
 )
 
 target_include_directories(GameFramework PUBLIC
