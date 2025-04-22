@@ -19,6 +19,15 @@ public:
     return m_type;
   }
 
+  inline sf::Texture& GetTexture()
+  {
+    return m_texture;
+  }
+
+ private: 
+
+
+  //Todo esto no debe ser público, para eso deberías tener un método que lo haga
   UIType m_type = UIType::None;
   ButtonType m_buttonType = ButtonType::None;
   sf::RectangleShape m_shape;

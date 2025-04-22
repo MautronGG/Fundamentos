@@ -30,11 +30,14 @@ public:
   const Vector2& GetPosition() const;
 
   virtual void Update(/*DeltaTime*/);
-  
-  std::weak_ptr<Transform> m_transformWeak;
-  std::shared_ptr<Transform> m_transform;
 
-private:
+  std::weak_ptr<Transform> GetTransform() const
+  {
+    return m_transform;
+  }
+  
+  private:
+  std::shared_ptr<Transform> m_transform;
   std::vector<std::shared_ptr<Component>> m_components;
 
 };

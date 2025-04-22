@@ -80,9 +80,50 @@ void SaveGame(Map& gameMap ,std::shared_ptr<Pac>& player);
 void LoadGame(std::shared_ptr<Pac>& player, std::vector<std::shared_ptr<Ghost>>& enemiesArray, Map& gameMap, GameManager& manager, std::vector<std::shared_ptr<Tile>>& tiles, sf::Vector2f offset, bool isNew);
 void NewGame(std::shared_ptr<Pac>& player, std::vector<std::shared_ptr<Ghost>>& enemiesArray, Map& gameMap, GameManager& manager, std::vector<std::shared_ptr<Tile>>& tiles, sf::Vector2f offset, bool isNew);
 
-
+//Todo esto debería ir en una clase APP que tenga todas las funciones que hiciste arriba. 
+// Ejemplo: 
+// class App{
+// public:
+//   App();
+//   ~App();
+//   void Run();
+// private:
+//   void MenuMain();
+//   void GameLoop();
+//   void PauseMenu();
+//   void GameOver();
+//   void Restart();
+//   void UpdateScene();
+//   void RenderScene();
+//   void CheckCollision();
+//   void DrawBounds();
+//   void Respawn();
+//   void SaveGame();
+//   void LoadGame();
+//   void NewGame();
+//   void LoadMods();
+// private:
+//   sf::RenderWindow m_window;
+//   GameManager m_manager;
+//   Scene m_menuScene;
+//   Scene m_gameScene;
+//   Scene m_pauseScene;
+//   Scene m_gameOverScene;
+//   std::shared_ptr<Pac> m_player;
+//   std::vector<std::shared_ptr<Ghost>> m_enemiesArray;
+//   std::vector<std::shared_ptr<Tile>> m_tiles;
+//   sf::Font m_font;
+//   sf::Text m_textObject;
+//   sf::Vector2f m_offset;
+//   Map m_gameMap;
+//}
 int main()
 {
+
+  //Tomando en cuenta el comentario anterior aquí sería:
+  // App app;
+  // app.Run();
+  // Dentro de run correrías todo lo necesario
   App();
 }
 
@@ -109,35 +150,35 @@ int App()
 
   std::shared_ptr<UIEntity> title = std::make_shared<UIEntity>(ButtonType::None, UIType::Title);
   title->SetShape(100, "PacMan", { 960, 200 }, textObject);
-  title->AddComponent<GraphicsComponent>(title->m_texture);
+  title->AddComponent<GraphicsComponent>(title->GetTexture());
   menu->AddButton(title);
 
   std::shared_ptr<UIEntity> startButton = std::make_shared<UIEntity>(ButtonType::Start, UIType::Button);
   startButton->SetShape(50, "Start", { 960, 500 }, textObject);
-  startButton->AddComponent<GraphicsComponent>(startButton->m_texture);
+  startButton->AddComponent<GraphicsComponent>(startButton->GetTexture());
   menu->AddButton(startButton);
 
   std::shared_ptr<UIEntity> continueButton = std::make_shared<UIEntity>(ButtonType::Continue, UIType::Button);
   continueButton->SetShape(50, "Continue", { 960, 700 }, textObject);
-  continueButton->AddComponent<GraphicsComponent>(continueButton->m_texture);
+  continueButton->AddComponent<GraphicsComponent>(continueButton->GetTexture());
   menu->AddButton(continueButton);
 
   std::shared_ptr<UIEntity> exitButton = std::make_shared<UIEntity>(ButtonType::Exit, UIType::Button);
   exitButton->SetShape(50, "Exit", { 960, 900 }, textObject);
-  exitButton->AddComponent<GraphicsComponent>(exitButton->m_texture);
+  exitButton->AddComponent<GraphicsComponent>(exitButton->GetTexture());
   menu->AddButton(exitButton);
 
   menuScene.AddEntity(menu);
 
   // Supongo que dejaste esto como pseudocódigo
 
-  // for each(std::shared_ptr<UIEntity> entity in menu->m_buttonArray)
+  // for each(std::shared_ptr<UIEntity> entity in menu->GetButtonArray())
   //   {
   //     menuScene.AddEntity(entity);
   //   }
 
   // Codigo real debería
-  for (auto& entity : menu->m_buttonArray)
+  for (auto& entity : menu->GetButtonArray())
   {
     menuScene.AddEntity(entity);
   }
@@ -168,15 +209,30 @@ int App()
   player->AddComponent<GraphicsComponent>(pacManTexture);
 
   std::shared_ptr<Entity> level = std::make_shared<Entity>();
-  level->AddComponent<GraphicsComponent>(levelTexture);
+  std::weak_ptr<Transform> levelTransform = level->GetComponent<Transform>();
+  ;
 
   Direction playerDirection = Direction::Right;
 
-  level->m_transformWeak = level->GetComponent<Transform>();
-  level->m_transform = level->m_transformWeak.lock();
+  // Esto no tiene sentido, estás asignando el transform a sí mismo
+  //level->GetTransform() = level->GetComponent<Transform>();
 
-  level->m_transform->position.x = 960;
-  level->m_transform->position.y = 540;
+  // Esto tampoco tiene sentido, estás asignando el transform a sí mismo
+  //level->m_transform = level->GetTransform().lock();
+
+  // Esto no debería ser así, sino que pides el weak y de ahí sacas la información. 
+  // parecer que tu AddComponent ya hace la creación y asignación del transform
+  //level->m_transform->position.x = 960;
+  //level->m_transform->position.y = 540;
+
+  // Obtienes el transform como weak, entonces  te aseguras que esté vivo, y luego asignas los valores
+  std::weak_ptr<Transform> levelTransformWeak = level->GetComponent<Transform>();
+  std::shared_ptr<Transform> levelTransformShared = levelTransformWeak.lock();
+  if (levelTransformShared)
+  {
+    levelTransformShared->position.x = 960;
+    levelTransformShared->position.y = 540;
+  }
 
   sf::Vector2f offset({ 489, 17.5 });
   Map gameMap(offset);
@@ -185,36 +241,51 @@ int App()
   std::cout << "Tiles direction: " << &tiles[0] << std::endl;
   std::cout << "GameMap Tiles direction: " << &gameMap.GetTiles()[0] << std::endl;
 
-  player->m_startingTile = gameMap.GetStartingTile();
+  // No entiendo por que usas aquí el acceso direct si tienes setters para eso:
+  //player->GetStartingTile() = gameMap.GetStartingTile();
+  player->SetStartingTiles(gameMap.GetStartingTile());
 
-  std::cout << "Starting Tile type: " << player->m_startingTile.type << std::endl;
-  std::cout << "Starting Tile Index: " << player->m_startingTile.index << std::endl;
-  std::cout << "Starting Tile Position: ( " << player->m_startingTile.x << ", " << player->m_startingTile.y << std::endl;
+  // Cambie como accedes a las variables, esto debería ser a tráves de getters y setters
+  std::cout << "Starting Tile type: " << player->GetStartingTile().type << std::endl;
+  std::cout << "Starting Tile Index: " << player->GetStartingTile().index << std::endl;
+  std::cout << "Starting Tile Position: ( " << player->GetStartingTile().x << ", " << player->GetStartingTile().y << std::endl;
 
   int tileSize = gameMap.GetTileSize();
 
-  player->m_transformWeak = player->GetComponent<Transform>();
-  player->m_transform = player->m_transformWeak.lock();
+  //Tampoco tiene sentido, lo mismo que arriba
+  // player->GetTransform() = player->GetComponent<Transform>();
+  // player->m_transform = player->GetTransform().lock();
 
-  player->m_tileTransformWeak = tiles[player->m_startingTile.index]->GetComponent<Transform>();
-  player->m_tileTransform = player->m_tileTransformWeak.lock();
+  std::weak_ptr<Transform> playerTransformWeak = player->GetComponent<Transform>();
+  std::shared_ptr<Transform> playerTransformShared = playerTransformWeak.lock();
+  if (playerTransformShared)
+  {
+    playerTransformShared->position.x = player->GetStartingTile().x + player->GetCenterOffset();
+    playerTransformShared->position.y = player->GetStartingTile().y + player->GetCenterOffset();
+  }
 
-  player->m_transform->position.x = player->m_tileTransform->position.x + player->m_centerOffset;
-  player->m_transform->position.y = player->m_tileTransform->position.y + player->m_centerOffset;
 
-  player->m_nextTile = player->m_startingTile;
-  player->m_tryNextTile = player->m_nextTile;
+  // nunca debes asignar como tal un weak de esta manera, el weak puede no ser valido, los weak se crean a partir de un shared
+  // player->m_tileTransformWeak = tiles[player->GetStartingTile().index]->GetComponent<Transform>();
+  //player->m_tileTransform = player->m_tileTransformWeak.lock();
 
-  player->m_tiles = tiles;
+  //Esto no está bien, porque accedes directamente al transform, arriba se está haciendo mejor, chequeando el puntero.
+  // player->m_transform->position.x = player->m_tileTransform->position.x + player->GetCenterOffset();
+  // player->m_transform->position.y = player->m_tileTransform->position.y + player->GetCenterOffset();
+
+  player->SetNextTile(player->GetStartingTile());
+  player->SetTryNextTile(player->GetNextTile());
+
+  player->SetTiles(tiles);
   player->SetStartingTiles(gameMap.GetStartingTile());
 
   std::shared_ptr<UIEntity> gameScore = std::make_shared<UIEntity>(ButtonType::None, UIType::Normal);
   gameScore->SetShape(90, "Score: " + player->GetScore(), { 200, 100 }, textObject);
-  gameScore->AddComponent<GraphicsComponent>(gameScore->m_texture);
+  gameScore->AddComponent<GraphicsComponent>(gameScore->GetTexture());
 
   std::shared_ptr<UIEntity> gameLives = std::make_shared<UIEntity>(ButtonType::None, UIType::Normal);
   gameLives->SetShape(90, "Lives: " + player->GetLives(), { 200, 200 }, textObject);
-  gameLives->AddComponent<GraphicsComponent>(gameLives->m_texture);
+  gameLives->AddComponent<GraphicsComponent>(gameLives->GetTexture());
 
   gameScene.AddEntity(gameScore);
   gameScene.AddEntity(gameLives);
@@ -229,20 +300,20 @@ int App()
     std::shared_ptr<Ghost> enemy = std::make_shared<Ghost>();
     enemy->AddComponent<GraphicsComponent>(ghostTexture);
 
-    enemy->m_transformWeak = enemy->GetComponent<Transform>();
-    enemy->m_transform = enemy->m_transformWeak.lock();
+    enemy->GetTransform() = enemy->GetComponent<Transform>();
+    enemy->m_transform = enemy->GetTransform().lock();
 
 
-    enemy->m_startingTile = ghostSTile;
+    enemy->GetStartingTile() = ghostSTile;
 
-    enemy->m_nextTile = enemy->m_startingTile;
+    enemy->m_nextTile = enemy->GetStartingTile();
     enemy->m_tryNextTile = enemy->m_nextTile;
 
-    enemy->m_tileTransformWeak = tiles[enemy->m_startingTile.index]->GetComponent<Transform>();
+    enemy->m_tileTransformWeak = tiles[enemy->GetStartingTile().index]->GetComponent<Transform>();
     enemy->m_tileTransform = enemy->m_tileTransformWeak.lock();
 
-    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + enemy->m_centerOffset;
-    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + enemy->m_centerOffset;
+    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + enemy->GetCenterOffset();
+    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + enemy->GetCenterOffset();
 
     enemy->m_tiles = tiles;
     enemy->m_direction = Direction::Up;
@@ -258,35 +329,35 @@ int App()
 
   std::shared_ptr<UIEntity> pauseTitle = std::make_shared<UIEntity>(ButtonType::None, UIType::Title);
   pauseTitle->SetShape(100, "Pause", { 960, 200 }, textObject);
-  pauseTitle->AddComponent<GraphicsComponent>(pauseTitle->m_texture);
+  pauseTitle->AddComponent<GraphicsComponent>(pauseTitle->GetTexture());
   pause->AddButton(pauseTitle);
 
   std::shared_ptr<UIEntity> pauseStartButton = std::make_shared<UIEntity>(ButtonType::Start, UIType::Button);
   pauseStartButton->SetShape(50, "Continue", { 960, 500 }, textObject);
-  pauseStartButton->AddComponent<GraphicsComponent>(pauseStartButton->m_texture);
+  pauseStartButton->AddComponent<GraphicsComponent>(pauseStartButton->GetTexture());
   pause->AddButton(pauseStartButton);
 
   std::shared_ptr<UIEntity> pauseContinueButton = std::make_shared<UIEntity>(ButtonType::Continue, UIType::Button);
   pauseContinueButton->SetShape(50, "Restart", { 960, 700 }, textObject);
-  pauseContinueButton->AddComponent<GraphicsComponent>(pauseContinueButton->m_texture);
+  pauseContinueButton->AddComponent<GraphicsComponent>(pauseContinueButton->GetTexture());
   pause->AddButton(pauseContinueButton);
 
   std::shared_ptr<UIEntity> pauseExitButton = std::make_shared<UIEntity>(ButtonType::Exit, UIType::Button);
   pauseExitButton->SetShape(50, "Exit", { 960, 900 }, textObject);
-  pauseExitButton->AddComponent<GraphicsComponent>(pauseExitButton->m_texture);
+  pauseExitButton->AddComponent<GraphicsComponent>(pauseExitButton->GetTexture());
   pause->AddButton(pauseExitButton);
 
   pauseScene.AddEntity(pause);
 
 
   // Supongo que dejaste esto como pseudocódigo
-  // for each(std::shared_ptr<UIEntity> entity in pause->m_buttonArray)
+  // for each(std::shared_ptr<UIEntity> entity in pause->GetButtonArray())
   // {
   //   pauseScene.AddEntity(entity);
   // }
 
   // Codigo real debería
-  for (auto& entity : pause->m_buttonArray)
+  for (auto& entity : pause->GetButtonArray())
   {
     pauseScene.AddEntity(entity);
   }
@@ -296,34 +367,34 @@ int App()
 
   std::shared_ptr<UIEntity> gameOverTitle = std::make_shared<UIEntity>(ButtonType::None, UIType::Title);
   gameOverTitle->SetShape(100, "Game", { 960, 150 }, textObject);
-  gameOverTitle->AddComponent<GraphicsComponent>(gameOverTitle->m_texture);
+  gameOverTitle->AddComponent<GraphicsComponent>(gameOverTitle->GetTexture());
   gameOver->AddButton(gameOverTitle);
 
   std::shared_ptr<UIEntity> gameOverTitle2 = std::make_shared<UIEntity>(ButtonType::None, UIType::Title);
   gameOverTitle2->SetShape(100, "Over", { 960, 350 }, textObject);
-  gameOverTitle2->AddComponent<GraphicsComponent>(gameOverTitle2->m_texture);
+  gameOverTitle2->AddComponent<GraphicsComponent>(gameOverTitle2->GetTexture());
   gameOver->AddButton(gameOverTitle2);
 
   std::shared_ptr<UIEntity> gameOverContinueButton = std::make_shared<UIEntity>(ButtonType::Continue, UIType::Button);
   gameOverContinueButton->SetShape(50, "Restart", { 960, 700 }, textObject);
-  gameOverContinueButton->AddComponent<GraphicsComponent>(gameOverContinueButton->m_texture);
+  gameOverContinueButton->AddComponent<GraphicsComponent>(gameOverContinueButton->GetTexture());
   gameOver->AddButton(gameOverContinueButton);
 
   std::shared_ptr<UIEntity> gameOverExitButton = std::make_shared<UIEntity>(ButtonType::Exit, UIType::Button);
   gameOverExitButton->SetShape(50, "Exit", { 960, 900 }, textObject);
-  gameOverExitButton->AddComponent<GraphicsComponent>(gameOverExitButton->m_texture);
+  gameOverExitButton->AddComponent<GraphicsComponent>(gameOverExitButton->GetTexture());
   gameOver->AddButton(gameOverExitButton);
 
   gameOverScene.AddEntity(gameOver);
 
   // Supongo que dejaste esto como pseudocódigo
-  // for each(std::shared_ptr<UIEntity> entity in gameOver->m_buttonArray)
+  // for each(std::shared_ptr<UIEntity> entity in gameOver->GetButtonArray())
   // {
   //   gameOverScene.AddEntity(entity);
   // }
 
   // Codigo real debería
-  for (auto& entity : gameOver->m_buttonArray)
+  for (auto& entity : gameOver->GetButtonArray())
   {
     gameOverScene.AddEntity(entity);
   }
@@ -510,14 +581,14 @@ void DrawBounds(sf::RenderWindow& window, const sf::FloatRect& bounds, const sf:
 
 void Respawn(std::shared_ptr <Pac>& player, std::vector<std::shared_ptr<Ghost>>& enemiesArray)
 {
-  player->m_nextTile = player->m_startingTile;
+  player->m_nextTile = player->GetStartingTile();
   player->m_tryNextTile = player->m_nextTile;
 
-  player->m_tileTransformWeak = player->m_tiles[player->m_startingTile.index]->GetComponent<Transform>();
+  player->m_tileTransformWeak = player->m_tiles[player->GetStartingTile().index]->GetComponent<Transform>();
   player->m_tileTransform = player->m_tileTransformWeak.lock();
 
-  player->m_transform->position.x = player->m_tileTransform->position.x + player->m_centerOffset;
-  player->m_transform->position.y = player->m_tileTransform->position.y + player->m_centerOffset;
+  player->m_transform->position.x = player->m_tileTransform->position.x + player->GetCenterOffset();
+  player->m_transform->position.y = player->m_tileTransform->position.y + player->GetCenterOffset();
 
   player->m_direction = Direction::Right;
 
@@ -525,14 +596,14 @@ void Respawn(std::shared_ptr <Pac>& player, std::vector<std::shared_ptr<Ghost>>&
   //real code
   for (auto enemy: enemiesArray)
   {
-    enemy->m_nextTile = enemy->m_startingTile;
+    enemy->m_nextTile = enemy->GetStartingTile();
     enemy->m_tryNextTile = enemy->m_nextTile;
 
-    enemy->m_tileTransformWeak = enemy->m_tiles[enemy->m_startingTile.index]->GetComponent<Transform>();
+    enemy->m_tileTransformWeak = enemy->m_tiles[enemy->GetStartingTile().index]->GetComponent<Transform>();
     enemy->m_tileTransform = enemy->m_tileTransformWeak.lock();
 
-    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + enemy->m_centerOffset;
-    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + enemy->m_centerOffset;
+    enemy->m_transform->position.x = enemy->m_tileTransform->position.x + enemy->GetCenterOffset();
+    enemy->m_transform->position.y = enemy->m_tileTransform->position.y + enemy->GetCenterOffset();
 
     enemy->m_direction = Direction::Up;
   }

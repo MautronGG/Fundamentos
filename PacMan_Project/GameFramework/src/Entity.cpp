@@ -6,6 +6,7 @@
 
 Entity::Entity()
 {
+  //Aquí se crea el transform, no es neceario hacer lo que estabas haciendo de asignarlo de nuevo
   m_components.push_back(std::make_shared<Transform>());
 }
 
